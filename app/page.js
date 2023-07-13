@@ -1,4 +1,5 @@
 import Catolog from "@/components/Catolog/Catolog";
+import Contact from "@/components/Contact/Contact";
 import Design from "@/components/Design/Design";
 import Factory from "@/components/Factory/Factory";
 import Hero from "@/components/Hero/Hero";
@@ -14,6 +15,7 @@ export default function Home() {
             <Services />
             <Design />
             <Partner />
+            <Contact />
         </>
     );
 }
