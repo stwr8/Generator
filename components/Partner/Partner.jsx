@@ -33,6 +33,7 @@ const Partner = () => {
                             className="cursor-pointer w-auto h-[62px] sm:h-[102px]"
                             key={data?.id}
                             src={data?.image}
+                            alt="generator"
                         />
                     ))}
                 </div>

@@ -15,7 +15,9 @@ const Factory = () => {
                     alt="factory"
                 />
                 <div className="max-w-[540px] w-full">
-                    <h2 className="font-bold text-[40px] sm:text-[48px] text-[#333] sm:text-center mt-2">O нас</h2>
+                    <h2 className="font-bold text-[40px] sm:text-[48px] text-[#333] sm:text-center mt-2">
+                        O нас
+                    </h2>
                     <p className="font-normal text-[18px] text-[#333] opacity-80 my-2">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nunc odio in et, lectus sit lorem id integer. Lorem
