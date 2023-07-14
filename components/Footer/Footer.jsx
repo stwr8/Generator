@@ -99,11 +99,11 @@ const Footer = () => {
                         </form>
                     </div>
                 </div>
-                <Link className="flex items-center justify-center w-[60px] h-[50px] bg-[#313131] rounded-lg ml-[35px] sm:mb-[35px]" href={"/"}>
+                <Link className="flex items-center justify-center w-[60px] h-[50px] bg-[#313131] rounded-lg ml-[35px] sm:mb-[35px]" href={`/`}>
                     <Image src={Arrow} width={21} height={12} alt="arrow-up" />
                 </Link>
             </div>
-            <p className="container sm:!p-0 font-normal text-[12px] text-[#D9DBE1] !mt-[18px]">2023 "YOUR COMPANY" LLC</p>
+            <p className="container sm:!p-0 font-normal text-[12px] text-[#D9DBE1] !mt-[18px]">2023 YOUR COMPANY LLC</p>
         </div>
     );
 };

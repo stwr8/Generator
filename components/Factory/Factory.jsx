@@ -31,7 +31,7 @@ const Factory = () => {
                     <div className="flex items-center justify-between w-full mt-[16px] sm:mt-[60px]">
                         <p className="hidden sm:block"></p>
                         <Link
-                            href={"/"}
+                            href={`/`}
                             className="flex justify-between w-fit font-semibold sm:font-bold text-[16px] sm:text-[18px] text-white px-[30px] sm:px-[45px] py-[12px] sm:py-[15px] bg-[#4762FF] rounded-lg"
                         >
                             Подробнее
