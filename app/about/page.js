@@ -1,6 +1,6 @@
 import Documentation from "@/components/Documentation/Documentation";
 import Hero from "@/components/HeroForPage/Hero";
-import Font from "@/components/OurFont/OurFont";
+import Font from "@/components/Numbers/Numbers";
 
 const About = () => {
     return (

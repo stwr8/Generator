@@ -1,6 +1,6 @@
-const Contact = () => {
+const FormContact = () => {
     return (
-        <section className="bg-contact-pattern bg-no-repeat bg-cover bg-fixed pt-[90px] sm:pt-[120px] pb-[90px] mt-[30px] sm:mt-[57px]">
+        <section className="bg-contact-pattern bg-no-repeat bg-cover pt-[90px] sm:pt-[120px] pb-[90px] mt-[30px] sm:mt-[57px]">
             <div className="container flex items-center justify-between">
                 <p></p>
                 <div className="max-w-[607px] w-full bg-white rounded-[15px] px-[20px] sm:px-[35px] pt-[10px] sm:pt-5 pb-5 sm:pb-10">
@@ -25,7 +25,10 @@ const Contact = () => {
                             placeholder="Номер телефона"
                             className="w-full h-[45px] sm:h-[54px] font-normal border-[1.5px] border-white focus:border-[#4762FF] bg-input-bg rounded-lg outline-none text-[16px] text-[#979797] px-[25px]"
                         />
-                        <button className="w-full h-[45px] sm:h-[64px] font-bold text-[18px] text-white text-center bg-[#4762FF] rounded-lg" type="submit">
+                        <button
+                            className="w-full h-[45px] sm:h-[64px] font-bold text-[18px] text-white text-center bg-[#4762FF] rounded-lg"
+                            type="submit"
+                        >
                             Отправить
                         </button>
                     </form>
@@ -35,4 +38,4 @@ const Contact = () => {
     );
 };
 
-export default Contact;
+export default FormContact;

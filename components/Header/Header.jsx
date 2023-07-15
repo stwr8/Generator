@@ -128,12 +128,12 @@ const Header = () => {
                                 height={20}
                                 alt="Picture of call"
                             />
-                            <a
+                            <Link
                                 href="tel:+998980013666"
                                 className="font-normal text-base text-[#333333] opacity-75 ml-2"
                             >
                                 +998 98 001 3666
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <Link
@@ -182,46 +182,46 @@ const Header = () => {
                             alt="Picture of the author"
                         />
                         {drop ? (
-                            <ul className="absolute z-50 -left-[26px] top-[43px] lg:top-[47px] w-[80px] bg-gray-100 rounded-lg duration-500 !text-center">
+                            <ul className="absolute z-50 -left-[24px] top-[43px] lg:top-[47px] w-[80px] bg-gray-100 rounded-lg duration-500 !text-center">
                                 <li
                                     onClick={ChangeUzb}
-                                    className="flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-b-lg "
+                                    className="w-full flex font-medium justify-center items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
                                 >
                                     Uz
                                 </li>
                                 <li
                                     onClick={ChangeRus}
-                                    className="w-full flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
+                                    className="w-full flex font-medium items-center justify-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
                                 >
                                     Ru
                                 </li>
                                 <li
                                     onClick={ChangeEng}
-                                    className="w-full flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
+                                    className="w-full flex font-medium items-center justify-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
                                 >
                                     En
                                 </li>
                                 <li
                                     onClick={ChangeTg}
-                                    className="w-full flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
+                                    className="w-full flex font-medium items-center justify-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
                                 >
                                     Tg
                                 </li>
                                 <li
                                     onClick={ChangeTr}
-                                    className="w-full flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
+                                    className="w-full flex font-medium items-center justify-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
                                 >
                                     Tr
                                 </li>
                                 <li
                                     onClick={ChangeKaz}
-                                    className="w-full flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
+                                    className="w-full flex font-medium items-center justify-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
                                 >
                                     Kz
                                 </li>
                                 <li
                                     onClick={ChangeKy}
-                                    className="w-full flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
+                                    className="w-full flex font-medium items-center justify-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
                                 >
                                     Ky
                                 </li>
@@ -247,7 +247,7 @@ const Header = () => {
                                 <Link href={"/catalog"}>Наша продукция</Link>
                             </li>
                             <li className="font-medium text-base text-[#333] hover:text-[#4762FF] transition ease-in-out duration-200 uppercase">
-                                <Link href={"/"}>Наши услуги</Link>
+                                <Link href={"/service"}>Наши услуги</Link>
                             </li>
                             <li className="font-medium text-base text-[#333] hover:text-[#4762FF] transition ease-in-out duration-200 uppercase">
                                 <Link href={"/about"}>О нас</Link>
@@ -329,8 +329,7 @@ const Header = () => {
                     </div>
                 </div>
 
-                {/* Modal */}
-
+                {/* --- Sidebar --- */}
                 <Modal
                     change={true}
                     isVisible={showModal}
@@ -409,7 +408,7 @@ const Header = () => {
                                 onClick={() => setShowModal(false)}
                                 className="font-medium text-base text-[#333] hover:text-[#4762FF] transition ease-in-out duration-200 uppercase"
                             >
-                                <Link href={"/"}>Наши услуги</Link>
+                                <Link href={"/service"}>Наши услуги</Link>
                             </li>
                             <li
                                 onClick={() => setShowModal(false)}
@@ -531,6 +530,7 @@ const Header = () => {
                     </ul>
                 </Modal>
 
+                {/* --- Consultation --- */}
                 <Modal
                     change={false}
                     isVisible={showContact}

@@ -8,8 +8,8 @@ import Arrow from "../../public/Images/arrow-up.svg";
 const Footer = () => {
     return (
         <div className="bg-[#1A1A1A] !pt-[50px] !pb-[35px]">
-            <div className="container flex !items-end !pb-[35px] border-b-[1px] border-white">
-                <div className="grid grid-cols-1 sm:grid-cols-4 items-start space-y-5 sm:space-y-0">
+            <div className="container flex !items-end !pb-[35px] border-b-[0.7px] border-[#474747]">
+                <div className="grid grid-cols-1 sm:grid-cols-4 gap-5 items-start space-y-5 sm:space-y-0">
                     <div className="flex items-center justify-between">
                         <Link className="flex items-center" href="/">
                             <Image
@@ -28,14 +28,13 @@ const Footer = () => {
                         </p>
                         <ul className="space-y-[6px] mt-[15px]">
                             <li className="font-normal text-base text-white">
-                                <Link href={"/"}></Link>
-                                Наш каталог
+                                <Link href={"/catalog"}>Наш каталог</Link>
                             </li>
                             <li className="font-normal text-base text-white">
-                                <Link href={"/"}>Наши услуги</Link>
+                                <Link href={"/service"}>Наши услуги</Link>
                             </li>
                             <li className="font-normal text-base text-white">
-                                <Link href={"/"}>O нас</Link>
+                                <Link href={"/about"}>O нас</Link>
                             </li>
                             <li className="font-normal text-base text-white">
                                 <Link href={"/"}>Оставить заявку</Link>
@@ -69,12 +68,12 @@ const Footer = () => {
                             >
                                 powermet.infor@gmail.com
                             </a>
-                            <a
-                                className="inline-block font-normal text-base text-white"
+                            <Link
                                 href="tel+998900013666"
+                                className="inline-block font-normal text-base text-white"
                             >
                                 +998 90 001 3 666
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <div>

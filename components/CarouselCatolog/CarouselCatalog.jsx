@@ -102,7 +102,7 @@ const datas = [
     },
 ];
 
-const Catolog = () => {
+const CarouselCatalog = () => {
     return (
         <div className="bg-white sm:bg-[#191919] mt-5 sm:mt-[68px]">
             <div className="max-w-[1350px] w-full mx-auto px-[16px] sm:!pb-[100px]">
@@ -163,8 +163,8 @@ const Catolog = () => {
                                         </span>
                                     </p>
                                     <Link
-                                        className="block mx-auto font-medium text-[18px] text-white text-center py-2 bg-[#4762FF] rounded-lg mt-[14px]"
                                         href={"/"}
+                                        className="block mx-auto font-medium text-[18px] text-white text-center py-2 bg-[#4762FF] rounded-lg mt-[14px]"
                                     >
                                         Подробно
                                     </Link>
@@ -178,4 +178,4 @@ const Catolog = () => {
     );
 };
 
-export default Catolog;
+export default CarouselCatalog;

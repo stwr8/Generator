@@ -18,6 +18,7 @@ module.exports = {
                 "contact-pattern": "url('/Images/contactbg.png')",
                 "hero-first": "url('/Images/hero_car1.png')",
                 "hero-second": "url('/Images/hero_car2.png')",
+                "hero-third": "url('/Images/hero_car3.png')",
                 "hero-gradient":
                     "radial-gradient(50.01% 50.00% at 62.40% 50.00%, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.69) 100%)",
             },

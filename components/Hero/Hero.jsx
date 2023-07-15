@@ -108,7 +108,7 @@ const Hero = () => {
                             Консультация
                         </Link>
                     </div>
-                    <div className="hidden absolute bottom-[60%] right-0 md:flex items-center">
+                    {/* <div className="hidden absolute bottom-[60%] right-0 md:flex items-center">
                         <div
                             ref={navigationPrevRef}
                             className="cursor-pointer rounded-full hover:scale-125 duration-200"
@@ -121,7 +121,7 @@ const Hero = () => {
                         >
                             <Image src={Next} width={60} height={60} alt="bg" />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </Swiper>
         </>

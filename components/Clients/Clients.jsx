@@ -20,13 +20,13 @@ const datas = [
     { id: 12, image: Shanghai },
 ];
 
-const Partner = () => {
+const Client = () => {
     return (
         <section>
             <h2 className="font-bold text-[40px] sm:text-[48px] text-[#333] text-center pb-[20px] sm:pb-[30px]">
                 Наши партнеры
             </h2>
-            <Marquee speed={60} gradientWidth={0} pauseOnClick={true}>
+            <Marquee speed={50} gradientWidth={0} pauseOnClick={true}>
                 <div className="flex items-center space-x-[30px]">
                     {datas?.map((data) => (
                         <Image
@@ -42,4 +42,4 @@ const Partner = () => {
     );
 };
 
-export default Partner;
+export default Client;

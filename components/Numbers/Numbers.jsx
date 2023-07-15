@@ -1,4 +1,4 @@
-const Font = () => {
+const Numbers = () => {
     return (
         <section className="bg-white">
             <div className="container sm:!pt-[57px] !py-[20px] sm:!pb-[95px]">
@@ -10,7 +10,7 @@ const Font = () => {
                         <h3 className="font-bold text-[100px] text-[#4762FF] text-center leading-[105px] sm:leading-normal">
                             5000
                         </h3>
-                        <p className="font-medium text-[18px] text-[#333] text-center opacity-80 mt-4 leading-normal"> 
+                        <p className="font-medium text-[18px] text-[#333] text-center opacity-80 mt-4 leading-normal">
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit. Nunc odio in et, lectus sit lorem id integer.
                         </p>
@@ -19,7 +19,7 @@ const Font = () => {
                         <h3 className="font-bold text-[100px] text-[#4762FF] text-center leading-[105px] sm:leading-normal">
                             14
                         </h3>
-                        <p className="font-medium text-[18px] text-[#333] text-center opacity-80 mt-4 leading-normal"> 
+                        <p className="font-medium text-[18px] text-[#333] text-center opacity-80 mt-4 leading-normal">
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit. Nunc odio in et, lectus sit lorem id integer.
                         </p>
@@ -28,7 +28,7 @@ const Font = () => {
                         <h3 className="font-bold text-[100px] text-[#4762FF] text-center leading-[105px] sm:leading-normal">
                             99
                         </h3>
-                        <p className="font-medium text-[18px] text-[#333] text-center opacity-80 mt-4 leading-normal"> 
+                        <p className="font-medium text-[18px] text-[#333] text-center opacity-80 mt-4 leading-normal">
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit. Nunc odio in et, lectus sit lorem id integer.
                         </p>
@@ -39,4 +39,4 @@ const Font = () => {
     );
 };
 
-export default Font;
+export default Numbers;

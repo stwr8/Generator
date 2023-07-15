@@ -1,23 +1,21 @@
 import Hero from "@/components/HeroForPage/Hero";
-import Product from "@/components/Products/Products";
 
-const Catalog = () => {
+const Service = () => {
     return (
         <>
             <Hero
                 title={
-                    "Полный каталог всех генераторов, а также производителей"
+                    "Услуги нашей кампании"
                 }
                 text={
                     "На этой старнице вы можете посмотреть всю информацию по фильтрам а также скачать pdf каждого генератора"
                 }
-                route={"Kаталог"}
+                route={"Сервисы"}
                 link={true}
-                bgImage={"catalog"}
+                bgImage={"service"}
             />
-            <Product />
         </>
     );
 };
 
-export default Catalog;
+export default Service;

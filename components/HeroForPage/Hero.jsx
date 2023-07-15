@@ -2,7 +2,17 @@ import Link from "next/link";
 
 const Hero = ({ title, text, link, route, bgImage }) => {
     return (
-        <section className={`${bgImage == "about" ? "bg-hero-first" : bgImage == "catalog" ? "bg-hero-second" : ""} bg-no-repeat bg-cover`}>
+        <section
+            className={`${
+                bgImage == "about"
+                    ? "bg-hero-first"
+                    : bgImage == "catalog"
+                    ? "bg-hero-second"
+                    : bgImage == "service"
+                    ? "bg-hero-third"
+                    : ""
+            } bg-no-repeat bg-cover`}
+        >
             <div className="container ">
                 <div className="hidden sm:flex items-center mt-[6px]">
                     <Link
@@ -15,7 +25,7 @@ const Hero = ({ title, text, link, route, bgImage }) => {
                         {route}
                     </span>
                 </div>
-                <div className="max-w-[630px] w-full pt-[170px] sm:pt-[137px] pb-[206px] sm:pb-[166px]">
+                <div className="sm:max-w-[630px] w-full pt-[170px] sm:pt-[137px] pb-[206px] sm:pb-[166px]">
                     <h1 className="font-bold text-[30px] md:text-[50px] leading-60 text-white uppercase">
                         {title}
                     </h1>
