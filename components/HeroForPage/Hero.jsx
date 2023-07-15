@@ -5,16 +5,20 @@ const Hero = ({ title, text, link, route, bgImage }) => {
         <section
             className={`${
                 bgImage == "about"
-                    ? "bg-hero-first"
+                    ? "bg-hero-first-mobile sm:bg-hero-first"
                     : bgImage == "catalog"
-                    ? "bg-hero-second"
+                    ? "bg-hero-second-mobile sm:bg-hero-second"
                     : bgImage == "service"
-                    ? "bg-hero-third"
-                    : ""
+                    ? "bg-hero-third-mobile sm:bg-hero-third"
+                    : bgImage == "partner"
+                    ? "bg-hero-fourth-mobile sm:bg-hero-fourth"
+                    : bgImage == "contact"
+                    ? "bg-hero-fifth-mobile sm:bg-hero-fifth"
+                    : null
             } bg-no-repeat bg-cover`}
         >
             <div className="container ">
-                <div className="hidden sm:flex items-center mt-[6px]">
+                <div className="hidden sm:flex items-center pt-[6px]">
                     <Link
                         className="font-normal text-[20px] text-link-color"
                         href={"/"}
@@ -25,8 +29,24 @@ const Hero = ({ title, text, link, route, bgImage }) => {
                         {route}
                     </span>
                 </div>
-                <div className="sm:max-w-[630px] w-full pt-[170px] sm:pt-[137px] pb-[206px] sm:pb-[166px]">
-                    <h1 className="font-bold text-[30px] md:text-[50px] leading-60 text-white uppercase">
+                <div
+                    className={`${
+                        bgImage == "partner" || "contact"
+                            ? "pt-[170px] sm:pt-[180px] pb-[206px] sm:pb-[213px]"
+                            : "pt-[170px] sm:pt-[137px] pb-[206px] sm:pb-[166px]"
+                    } sm:max-w-[630px] w-full `}
+                >
+                    <h1
+                        className={`font-bold ${
+                            bgImage == "partner" || "contact"
+                                ? "text-[30px] md:text-[40px]"
+                                : "text-[30px] md:text-[50px]"
+                        } ${
+                            bgImage == "about"
+                                ? "!text-[46px] sm:!text-[60px]"
+                                : null
+                        } leading-60 text-white uppercase`}
+                    >
                         {title}
                     </h1>
                     <p className="text-[18px] md:text-[24px] text-white opacity-80 mt-[10px] md:mt-[16px]">

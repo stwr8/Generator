@@ -137,7 +137,7 @@ const Header = () => {
                         </li>
                         <li>
                             <Link
-                                href={"/"}
+                                href={"/contact"}
                                 className="font-normal text-base text-[#333333] opacity-75"
                             >
                                 Контакты

@@ -14,7 +14,7 @@ export default function Home() {
             <CarouselCatalog />
             <Services />
             <Design />
-            <Client />
+            <Client title={"Наши партнеры"} />
             <Contact />
         </>
     );

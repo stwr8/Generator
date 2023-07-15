@@ -20,12 +20,14 @@ const datas = [
     { id: 12, image: Shanghai },
 ];
 
-const Client = () => {
+const Client = ({ title }) => {
     return (
         <section>
-            <h2 className="font-bold text-[40px] sm:text-[48px] text-[#333] text-center pb-[20px] sm:pb-[30px]">
-                Наши партнеры
-            </h2>
+            {title ? (
+                <h2 className="font-bold text-[40px] sm:text-[48px] text-[#333] text-center pb-[20px] sm:pb-[30px]">
+                    {title}
+                </h2>
+            ) : null}
             <Marquee speed={50} gradientWidth={0} pauseOnClick={true}>
                 <div className="flex items-center space-x-[30px]">
                     {datas?.map((data) => (

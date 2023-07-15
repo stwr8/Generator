@@ -37,10 +37,10 @@ const Footer = () => {
                                 <Link href={"/about"}>O нас</Link>
                             </li>
                             <li className="font-normal text-base text-white">
-                                <Link href={"/"}>Оставить заявку</Link>
+                                <Link href={"/contact"}>Оставить заявку</Link>
                             </li>
                             <li className="font-normal text-base text-white">
-                                <Link href={"/"}>Наши партнеры</Link>
+                                <Link href={"/partner"}>Наши партнеры</Link>
                             </li>
                             <li className="font-normal text-base text-white">
                                 <Link href={"/"}>Контакты</Link>
