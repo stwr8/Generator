@@ -111,13 +111,13 @@ const Hero = () => {
                     <div className="hidden absolute bottom-[60%] right-0 md:flex items-center">
                         <div
                             ref={navigationPrevRef}
-                            className="cursor-pointer rounded-full"
+                            className="cursor-pointer rounded-full hover:scale-125 duration-200"
                         >
                             <Image src={Prev} width={60} height={60} alt="bg" />
                         </div>
                         <div
                             ref={navigationNextRef}
-                            className="cursor-pointer rounded-full"
+                            className="cursor-pointer rounded-full hover:scale-125 duration-200"
                         >
                             <Image src={Next} width={60} height={60} alt="bg" />
                         </div>

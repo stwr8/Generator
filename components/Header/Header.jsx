@@ -244,7 +244,7 @@ const Header = () => {
                     <nav className="hidden md:block">
                         <ul className="flex items-center space-x-[46px]">
                             <li className="font-medium text-base text-[#333] hover:text-[#4762FF] transition ease-in-out duration-200 uppercase">
-                                <Link href={"/"}>Наша продукция</Link>
+                                <Link href={"/catalog"}>Наша продукция</Link>
                             </li>
                             <li className="font-medium text-base text-[#333] hover:text-[#4762FF] transition ease-in-out duration-200 uppercase">
                                 <Link href={"/"}>Наши услуги</Link>
@@ -403,7 +403,7 @@ const Header = () => {
                                 onClick={() => setShowModal(false)}
                                 className="font-medium text-base text-[#333] hover:text-[#4762FF] transition ease-in-out duration-200 uppercase"
                             >
-                                <Link href={"/"}>Наша продукция</Link>
+                                <Link href={"/catalog"}>Наша продукция</Link>
                             </li>
                             <li
                                 onClick={() => setShowModal(false)}

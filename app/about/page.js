@@ -12,6 +12,7 @@ const About = () => {
                 }
                 route={"О нас"}
                 link={true}
+                bgImage={"about"}
             />
             <Font />
             <Documentation />
