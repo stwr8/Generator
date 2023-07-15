@@ -6,8 +6,8 @@ import FactotyImage from "@/public/Images/factory.png";
 
 const Factory = () => {
     return (
-        <section className="container">
-            <div className="flex flex-col sm:flex-row items-center justify-between pt-5 sm:pt-[68px]">
+        <section className="bg-white">
+            <div className="container flex flex-col sm:flex-row items-center justify-between !pt-5 sm:!pt-[68px]">
                 <Image
                     src={FactotyImage}
                     width={530}

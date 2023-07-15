@@ -38,7 +38,6 @@ const Hero = () => {
                 effect={"fade"}
                 autoplay={{
                     delay: 5000,
-                    disableOnInteraction: false,
                 }}
                 navigation={{
                     prevEl: navigationPrevRef.current,

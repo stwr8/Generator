@@ -28,22 +28,23 @@ const Footer = () => {
                         </p>
                         <ul className="space-y-[6px] mt-[15px]">
                             <li className="font-normal text-base text-white">
+                                <Link href={"/"}></Link>
                                 Наш каталог
                             </li>
                             <li className="font-normal text-base text-white">
-                                Наши услуги
+                                <Link href={"/"}>Наши услуги</Link>
                             </li>
                             <li className="font-normal text-base text-white">
-                                O нас
+                                <Link href={"/"}>O нас</Link>
                             </li>
                             <li className="font-normal text-base text-white">
-                                Оставить заявку
+                                <Link href={"/"}>Оставить заявку</Link>
                             </li>
                             <li className="font-normal text-base text-white">
-                                Наши партнеры
+                                <Link href={"/"}>Наши партнеры</Link>
                             </li>
                             <li className="font-normal text-base text-white">
-                                Контакты
+                                <Link href={"/"}>Контакты</Link>
                             </li>
                         </ul>
                     </div>
@@ -56,8 +57,8 @@ const Footer = () => {
                                 Адрес
                             </p>
                             <address className="not-italic inline-block font-normal text-base text-white">
-                                Taras shevchenko street. <br />{" "}
-                                34.Tashkent,Mirabad Uzbekistan
+                                Taras shevchenko street. <br /> 34.Tashkent,
+                                <Link href={"/"}></Link>Mirabad Uzbekistan
                             </address>
                             <p className="font-bold text-base text-white">
                                 Mail
@@ -99,11 +100,16 @@ const Footer = () => {
                         </form>
                     </div>
                 </div>
-                <Link className="flex items-center justify-center w-[60px] h-[50px] bg-[#313131] rounded-lg ml-[35px] sm:mb-[35px]" href={`/`}>
+                <Link
+                    className="flex items-center justify-center w-[60px] h-[50px] bg-[#313131] rounded-lg ml-[35px] sm:mb-[35px]"
+                    href={`/`}
+                >
                     <Image src={Arrow} width={21} height={12} alt="arrow-up" />
                 </Link>
             </div>
-            <p className="container sm:!p-0 font-normal text-[12px] text-[#D9DBE1] !mt-[18px]">2023 YOUR COMPANY LLC</p>
+            <p className="container sm:!p-0 font-normal text-[12px] text-[#D9DBE1] !mt-[18px]">
+                2023 YOUR COMPANY LLC
+            </p>
         </div>
     );
 };

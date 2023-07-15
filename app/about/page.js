@@ -1,0 +1,22 @@
+import Documentation from "@/components/Documentation/Documentation";
+import Hero from "@/components/HeroForPage/Hero";
+import Font from "@/components/OurFont/OurFont";
+
+const About = () => {
+    return (
+        <>
+            <Hero
+                title={"О нас"}
+                text={
+                    "Наша кампания предоставляет такие услуги как продажа и монтаж генераторов в любос ассортименте"
+                }
+                route={"О нас"}
+                link={true}
+            />
+            <Font />
+            <Documentation />
+        </>
+    );
+};
+
+export default About;

@@ -9,11 +9,14 @@ module.exports = {
         "./src/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
+        fontFamily: {
+            montserrat: ['"Montserrat", "sans-serif'],
+        },
         extend: {
             backgroundImage: {
                 "hero-pattern": "url('/Images/hero_car.png')",
                 "contact-pattern": "url('/Images/contactbg.png')",
-
+                "hero-onas": "url('/Images/hero_car1.png')",
                 "hero-gradient":
                     "radial-gradient(50.01% 50.00% at 62.40% 50.00%, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.69) 100%)",
             },
@@ -24,6 +27,9 @@ module.exports = {
             },
             boxShadow: {
                 card_shadow: "0px 0px 6px 0px rgba(0, 0, 0, 0.10)",
+            },
+            colors: {
+                "link-color": "rgba(255, 255, 255, 0.80)",
             },
         },
     },

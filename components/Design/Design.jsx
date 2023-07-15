@@ -1,11 +1,7 @@
 "use client";
-import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 // Images
-import Prev from "@/public/Images/prev.svg";
-import Next from "@/public/Images/next.svg";
 import Generator from "@/public/Images/big_generator.png";
 
 // Import Swiper React components
@@ -16,6 +12,8 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+
+import "./design.css";
 
 // import required modules
 import { Navigation, Autoplay } from "swiper/modules";
@@ -40,8 +38,6 @@ const datas = [
 ];
 
 const Design = () => {
-    const navigationPrevRef = React.useRef(null);
-    const navigationNextRef = React.useRef(null);
     return (
         <div className="bg-white mt-5">
             <div className="max-w-[1350px] w-full mx-auto px-[16px] !pb-[30px] sm:!pb-[70px]">
@@ -60,13 +56,10 @@ const Design = () => {
                     spaceBetween={100}
                     slidesPerView={1}
                     autoplay={{
-                        delay: 20000,
+                        delay: 15000,
                         disableOnInteraction: false,
                     }}
-                    navigation={{
-                        prevEl: navigationPrevRef.current,
-                        nextEl: navigationNextRef.current,
-                    }}
+                    navigation={true}
                     pagination={false}
                     modules={[Navigation, Autoplay]}
                     className="mySwiper w-full z-10 !pb-3 !px-2 sm:!px-20"
@@ -85,31 +78,6 @@ const Design = () => {
                             </div>
                         </SwiperSlide>
                     ))}
-
-                    <div
-                        ref={navigationPrevRef}
-                        className="cursor-pointer rounded-full"
-                    >
-                        <Image
-                            className="absolute top-14 sm:top-52 -left-[8px] cursor-pointer z-20"
-                            src={Prev}
-                            width={60}
-                            height={60}
-                            alt="bg"
-                        />
-                    </div>
-                    <div
-                        ref={navigationNextRef}
-                        className="cursor-pointer rounded-full"
-                    >
-                        <Image
-                            className="absolute top-14 sm:top-52 -right-[8px] cursor-pointer z-20"
-                            src={Next}
-                            width={60}
-                            height={60}
-                            alt="bg"
-                        />
-                    </div>
                 </Swiper>
             </div>
         </div>

@@ -17,15 +17,3 @@
     background-repeat: no-repeat;
     background-size: cover !important;
 }
-
-.swiper-pagination-bullet {
-    width: 100px;
-    height: 1px;
-    cursor: pointer;
-    background: #fff;
-    transition: all 0.5s ease-in;
-}
-
-.swiper-pagination-bullet-active {
-    background-color: #fff;
-}

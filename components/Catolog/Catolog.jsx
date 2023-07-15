@@ -1,11 +1,8 @@
 "use client";
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 // Images
-import Prev from "@/public/Images/prev.svg";
-import Next from "@/public/Images/next.svg";
 import Generator from "@/public/Images/generator.png";
 
 // Import Swiper React components
@@ -17,8 +14,10 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import "./catolog.css"
+
 // import required modules
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 
 const datas = [
     {
@@ -104,8 +103,6 @@ const datas = [
 ];
 
 const Catolog = () => {
-    const navigationPrevRef = React.useRef(null);
-    const navigationNextRef = React.useRef(null);
     return (
         <div className="bg-white sm:bg-[#191919] mt-5 sm:mt-[68px]">
             <div className="max-w-[1350px] w-full mx-auto px-[16px] sm:!pb-[100px]">
@@ -115,11 +112,12 @@ const Catolog = () => {
                 <Swiper
                     spaceBetween={50}
                     slidesPerView={4}
-                    navigation={{
-                        prevEl: navigationPrevRef.current,
-                        nextEl: navigationNextRef.current,
-                    }}
+                    navigation={true}
                     pagination={false}
+                    autoplay={{
+                        delay: 10000,
+                        disableOnInteraction: false,
+                    }}
                     breakpoints={{
                         0: {
                             slidesPerView: 1,
@@ -128,7 +126,7 @@ const Catolog = () => {
                             slidesPerView: 4,
                         },
                     }}
-                    modules={[Navigation]}
+                    modules={[Navigation, Autoplay]}
                     className="mySwiper w-full z-10 !pb-3 !px-[50px]"
                 >
                     {datas.map((data) => (
@@ -174,31 +172,6 @@ const Catolog = () => {
                             </div>
                         </SwiperSlide>
                     ))}
-
-                    <div
-                        ref={navigationPrevRef}
-                        className="cursor-pointer rounded-full"
-                    >
-                        <Image
-                            className="absolute top-36 -left-[8px] cursor-pointer z-20"
-                            src={Prev}
-                            width={60}
-                            height={60}
-                            alt="bg"
-                        />
-                    </div>
-                    <div
-                        ref={navigationNextRef}
-                        className="cursor-pointer rounded-full"
-                    >
-                        <Image
-                            className="absolute top-36 -right-[8px] cursor-pointer z-20"
-                            src={Next}
-                            width={60}
-                            height={60}
-                            alt="bg"
-                        />
-                    </div>
                 </Swiper>
             </div>
         </div>

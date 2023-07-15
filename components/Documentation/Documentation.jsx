@@ -2,7 +2,7 @@
 import Image from "next/image";
 
 // Images
-import Generator from "@/public/Images/gen.png";
+import Sertificait from "@/public/Images/sertificait.png";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,68 +13,60 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import "./documentation.css"
+
 // import required modules
 import { Navigation, Autoplay } from "swiper/modules";
 
 const datas = [
     {
         id: 1,
-        image: Generator,
-        title: "Perkins Perkins",
+        image: Sertificait,
     },
     {
         id: 2,
-        image: Generator,
-        title: "Perkins Perkins",
+        image: Sertificait,
     },
     {
         id: 3,
-        image: Generator,
-        title: "Perkins Perkins",
+        image: Sertificait,
     },
     {
         id: 4,
-        image: Generator,
-        title: "Perkins Perkins",
+        image: Sertificait,
     },
     {
         id: 5,
-        image: Generator,
-        title: "Perkins Perkins",
+        image: Sertificait,
     },
     {
         id: 6,
-        image: Generator,
-        title: "Perkins Perkins",
+        image: Sertificait,
     },
     {
         id: 7,
-        image: Generator,
-        title: "Perkins Perkins",
+        image: Sertificait,
     },
     {
         id: 8,
-        image: Generator,
-        title: "Perkins Perkins",
+        image: Sertificait,
     },
     {
         id: 9,
-        image: Generator,
-        title: "Perkins Perkins",
+        image: Sertificait,
     },
     {
         id: 10,
-        image: Generator,
-        title: "Perkins Perkins",
+        image: Sertificait,
     },
 ];
 
-const Services = () => {
+const Documentation = () => {
     return (
         <section className="bg-white">
             <div className="max-w-[1350px] w-full mx-auto px-[16px] !pb-[20px] sm:!pb-[70px]">
                 <h2 className="font-bold text-[40px] sm:text-[48px] text-[#333] text-center py-[30px] sm:py-[57px]">
-                    Наши услуги
+                    Документация
                 </h2>
                 <Swiper
                     spaceBetween={30}
@@ -105,11 +97,8 @@ const Services = () => {
                                 <Image
                                     className="w-full h-[250px] rounded-md"
                                     src={data?.image}
-                                    alt="generator"
+                                    alt="Sertificait"
                                 />
-                                <h2 className="font-medium text-center text-[20px] sm:text-[30px] text-[#333]">
-                                    {data?.title}
-                                </h2>
                             </div>
                         </SwiperSlide>
                     ))}
@@ -119,4 +108,4 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default Documentation;

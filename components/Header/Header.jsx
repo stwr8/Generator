@@ -14,7 +14,6 @@ import Search from "../../public/Images/search.svg";
 import Mark_x from "../../public/Images/x.svg";
 
 const Header = () => {
-    const [scrollDown, setScrollDown] = useState("");
     const [showModal, setShowModal] = useState(false);
     const [showContact, setShoContact] = useState(false);
     // ---> Dropdown
@@ -28,7 +27,6 @@ const Header = () => {
     const [tg, setTg] = useState(false);
     const [kaz, setKaz] = useState(false);
     const [ky, setKy] = useState(false);
-    // Uz Eng Ru Tr Tg Kaz Ky
 
     // ---> Close dropdown
     useEffect(() => {
@@ -114,7 +112,7 @@ const Header = () => {
 
     return (
         <>
-            <div className={`container relative`}>
+            <header className={`container relative`}>
                 {/* --- Header top --- */}
                 <div className="hidden md:flex items-center justify-end py-[11px] border-b-[1px]">
                     <ul className="flex items-center space-x-5">
@@ -184,46 +182,46 @@ const Header = () => {
                             alt="Picture of the author"
                         />
                         {drop ? (
-                            <ul className="absolute z-50 -left-[26px] top-[43px] lg:top-[47px] w-[80px] bg-gray-100 rounded-b-md duration-500">
+                            <ul className="absolute z-50 -left-[26px] top-[43px] lg:top-[47px] w-[80px] bg-gray-100 rounded-lg duration-500 !text-center">
                                 <li
                                     onClick={ChangeUzb}
-                                    className="flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 text-center"
+                                    className="flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-b-lg "
                                 >
                                     Uz
                                 </li>
                                 <li
                                     onClick={ChangeRus}
-                                    className="flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 text-center"
+                                    className="w-full flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
                                 >
                                     Ru
                                 </li>
                                 <li
                                     onClick={ChangeEng}
-                                    className="flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 text-center"
+                                    className="w-full flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
                                 >
                                     En
                                 </li>
                                 <li
                                     onClick={ChangeTg}
-                                    className="flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 text-center"
+                                    className="w-full flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
                                 >
                                     Tg
                                 </li>
                                 <li
                                     onClick={ChangeTr}
-                                    className="flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 text-center"
+                                    className="w-full flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
                                 >
                                     Tr
                                 </li>
                                 <li
                                     onClick={ChangeKaz}
-                                    className="flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 text-center"
+                                    className="w-full flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
                                 >
                                     Kz
                                 </li>
                                 <li
                                     onClick={ChangeKy}
-                                    className="flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 text-center rounded-b-md"
+                                    className="w-full flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
                                 >
                                     Ky
                                 </li>
@@ -252,7 +250,7 @@ const Header = () => {
                                 <Link href={"/"}>Наши услуги</Link>
                             </li>
                             <li className="font-medium text-base text-[#333] hover:text-[#4762FF] transition ease-in-out duration-200 uppercase">
-                                <Link href={"/"}>O нас</Link>
+                                <Link href={"/about"}>О нас</Link>
                             </li>
                         </ul>
                     </nav>
@@ -341,7 +339,10 @@ const Header = () => {
                     }}
                 >
                     <div className="flex items-center justify-between py-[18px]">
-                        <div className="flex items-center justify-between">
+                        <div
+                            onClick={() => setShowModal(false)}
+                            className="flex items-center justify-between"
+                        >
                             <Link className="flex items-center" href="/">
                                 <Image
                                     className="w-[25px] h-[25px] md:w-[41px] md:h-[41px]"
@@ -398,14 +399,23 @@ const Header = () => {
                     </div>
                     <nav className="block md:hidden mt-[30px]">
                         <ul className="flex items-center flex-col text-center space-y-5">
-                            <li className="font-medium text-base text-[#333] hover:text-[#4762FF] transition ease-in-out duration-200 uppercase">
+                            <li
+                                onClick={() => setShowModal(false)}
+                                className="font-medium text-base text-[#333] hover:text-[#4762FF] transition ease-in-out duration-200 uppercase"
+                            >
                                 <Link href={"/"}>Наша продукция</Link>
                             </li>
-                            <li className="font-medium text-base text-[#333] hover:text-[#4762FF] transition ease-in-out duration-200 uppercase">
+                            <li
+                                onClick={() => setShowModal(false)}
+                                className="font-medium text-base text-[#333] hover:text-[#4762FF] transition ease-in-out duration-200 uppercase"
+                            >
                                 <Link href={"/"}>Наши услуги</Link>
                             </li>
-                            <li className="font-medium text-base text-[#333] hover:text-[#4762FF] transition ease-in-out duration-200 uppercase">
-                                <Link href={"/"}>O нас</Link>
+                            <li
+                                onClick={() => setShowModal(false)}
+                                className="font-medium text-base text-[#333] hover:text-[#4762FF] transition ease-in-out duration-200 uppercase"
+                            >
+                                <Link href={"/about"}>О нас</Link>
                             </li>
                         </ul>
                     </nav>
@@ -428,9 +438,6 @@ const Header = () => {
                                     +998 98 001 3666
                                 </p>
                             </Link>
-                        </li>
-                        <li className="font-medium text-base text-[#333] hover:text-[#4762FF] transition ease-in-out duration-200 uppercase">
-                            <Link href={"/"}>O нас</Link>
                         </li>
                         <li className="flex items-center">
                             {/* ------ Dropdown ------ */}
@@ -581,7 +588,7 @@ const Header = () => {
                         </p>
                     </div>
                 </Modal>
-            </div>
+            </header>
         </>
     );
 };

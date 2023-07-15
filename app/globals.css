@@ -2,10 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+/* montserrat-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../public//Fonts/montserrat-v25-latin-regular.woff2")
+            format("woff2"),
+        url("../public//Fonts/montserrat-v25-latin-regular.ttf")
+            format("truetype");
+}
+/* montserrat-500 - latin */
+@font-face {
+    font-display: swap;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../public//Fonts/montserrat-v25-latin-500.woff2") format("woff2"),
+        url("../public//Fonts/montserrat-v25-latin-500.ttf") format("truetype");
+}
+/* montserrat-600 - latin */
+@font-face {
+    font-display: swap;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../public//Fonts/montserrat-v25-latin-600.woff2") format("woff2"),
+        url("../public//Fonts/montserrat-v25-latin-600.ttf") format("truetype");
+}
+/* montserrat-700 - latin */
+@font-face {
+    font-display: swap;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../public//Fonts/montserrat-v25-latin-700.woff2") format("woff2"),
+        url("../public//Fonts/montserrat-v25-latin-700.ttf") format("truetype");
+}
 
 * {
-    font-family: "Poppins", sans-serif;
+    font-family: "Montserrat", sans-serif;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -34,20 +71,20 @@ a {
 
 ::-webkit-scrollbar {
     width: 7px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #4762FF; 
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #4762ff;
     border-radius: 5px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
