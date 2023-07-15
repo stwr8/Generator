@@ -10,8 +10,8 @@ import Hero_bg2 from "@/public/Images/hero_car2.png";
 import Hero_bg_mobile from "@/public/Images/hero_car_mobile.png";
 import Hero_bg_mobile1 from "@/public/Images/hero_car_mobile1.png";
 import Hero_bg_mobile2 from "@/public/Images/hero_car_mobile2.png";
-import Prev from "@/public/Images/prev.svg";
-import Next from "@/public/Images/next.svg";
+// import Prev from "@/public/Images/prev.svg";
+// import Next from "@/public/Images/next.svg";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";

@@ -69,7 +69,7 @@ const datas = [
     },
 ];
 
-const Services = () => {
+const CarouselServices = () => {
     return (
         <section className="bg-white">
             <div className="max-w-[1350px] w-full mx-auto px-[16px] !pb-[20px] sm:!pb-[70px]">
@@ -119,4 +119,4 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default CarouselServices;
