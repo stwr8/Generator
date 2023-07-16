@@ -263,7 +263,10 @@ const Product = () => {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mx-auto sm:mx-0">
                         {datas?.map((data) => (
-                            <div className="max-w-[250px] bg-white rounded-md shadow-card_shadow">
+                            <div
+                                key={data?.id}
+                                className="max-w-[250px] bg-white rounded-md shadow-card_shadow"
+                            >
                                 <Image
                                     className="w-full h-[165px] rounded-md"
                                     src={data?.image}
