@@ -3,35 +3,41 @@ const FormContact = () => {
         <section className="bg-contact-pattern bg-no-repeat bg-cover pt-[90px] sm:pt-[120px] pb-[90px] mt-[30px] sm:mt-[57px]">
             <div className="container flex items-center justify-between">
                 <p></p>
-                <div className="max-w-[607px] w-full bg-white rounded-[15px] px-[20px] sm:px-[35px] pt-[10px] sm:pt-5 pb-5 sm:pb-10">
-                    <h2 className="font-bold text-[24px] sm:text-[40px] text-[#333] leading-[30px] sm:leading-[45px] text-center">
-                        Получите консультацию бесплатно
-                    </h2>
-                    <p className="font-normal text-[16px] sm:text-[18px] text-[#333] opacity-80 leading-6 sm:leading-7 mt-4 text-center">
-                        Наши специалисты перезвонят вам и дадут подробную
-                        информацию
-                    </p>
+                <div className="max-w-[590px] w-full py-[30px] px-[45px] bg-[#4762FF] rounded-[10px]">
+                    <h3 className="font-normal text-[30px] text-white text-center leading-9">
+                        Хотите получить бесплатную консультацию?
+                    </h3>
                     <form
                         autoComplete="off"
-                        className="space-y-[23px] mt-[25px]"
+                        className="space-y-[20px] mt-[30px]"
                     >
                         <input
                             type="text"
-                            placeholder="Имя"
-                            className="w-full h-[45px] sm:h-[54px] font-normal border-[1.5px] border-white focus:border-[#4762FF] bg-input-bg rounded-lg outline-none text-[16px] text-[#979797] px-[25px]"
-                        />
-                        <input
-                            type="text"
                             placeholder="Номер телефона"
-                            className="w-full h-[45px] sm:h-[54px] font-normal border-[1.5px] border-white focus:border-[#4762FF] bg-input-bg rounded-lg outline-none text-[16px] text-[#979797] px-[25px]"
+                            className="w-full h-[45px] sm:h-[54px] font-normal border-[1.5px] border-white bg-input-bg-contact rounded-lg outline-none text-[16px] text-white placeholder-white px-[25px]"
                         />
                         <button
-                            className="w-full h-[45px] sm:h-[64px] font-bold text-[18px] text-white text-center bg-[#4762FF] rounded-lg"
+                            className="w-full h-[45px] sm:h-[54px] font-bold text-[18px] text-[#4762FF] text-center bg-[#fff] rounded-lg"
                             type="submit"
                         >
                             Отправить
                         </button>
                     </form>
+                    <div className="my-5">
+                        <p className="font-normal text-[26px] text-white text-center">
+                            или позвоните на номер
+                        </p>
+                        <a
+                            href="tel:+998980013666"
+                            className="block font-normal text-[30px] text-white text-center leading-8"
+                        >
+                            {" "}
+                            +998 98 001 3 666
+                        </a>
+                    </div>
+                    <p className="max-w-[312px] w-full mx-auto text-white text-[16px] opacity-80 text-center">
+                        После получения заявки наш специалист свяжется с вами
+                    </p>
                 </div>
             </div>
         </section>

@@ -11,11 +11,10 @@ import Vector from "../../public/Images/vector.svg";
 import Logo from "../../public/Images/logo.svg";
 import CallWhite from "../../public/Images/call_white.svg";
 import Search from "../../public/Images/search.svg";
-import Mark_x from "../../public/Images/x.svg";
 
 const Header = () => {
     const [showModal, setShowModal] = useState(false);
-    const [showContact, setShoContact] = useState(false);
+
     // ---> Dropdown
     const [drop, setDrop] = useState(false);
     const [drop1, setDrop1] = useState(false);
@@ -267,11 +266,8 @@ const Header = () => {
                             height={22}
                             alt="search"
                         />
-                        <button
-                            type="button"
-                            onClick={() => {
-                                setShoContact(true);
-                            }}
+                        <Link
+                            href={"contact"}
                             className="flex items-center bg-[#4762FF] rounded-[6px] px-[15px] py-[8px] "
                         >
                             <Image
@@ -283,7 +279,7 @@ const Header = () => {
                             <p className="font-medium text-white text-base tracking-[0.12px] ml-[6px]">
                                 Консультация
                             </p>
-                        </button>
+                        </Link>
                     </div>
                     <div className="md:hidden flex items-center space-x-4">
                         <div className="relative flex items-center">
@@ -528,65 +524,6 @@ const Header = () => {
                             </button>
                         </li>
                     </ul>
-                </Modal>
-
-                {/* --- Consultation --- */}
-                <Modal
-                    change={false}
-                    isVisible={showContact}
-                    onClose={() => {
-                        setShoContact(false);
-                    }}
-                >
-                    <div className="max-w-[590px] w-full py-[30px] px-[60px] relative">
-                        <button
-                            type="button"
-                            onClick={() => setShoContact(false)}
-                            className="absolute top-[20px] right-[25px] w-[30px] h-[30px]"
-                        >
-                            <Image
-                                src={Mark_x}
-                                width={30}
-                                height={30}
-                                alt="close"
-                            />
-                        </button>
-                        <h3 className="font-normal text-[30px] text-white text-center leading-9">
-                            Хотите получить бесплатную консультацию?
-                        </h3>
-                        <form
-                            autoComplete="off"
-                            className="space-y-[23px] mt-[40px]"
-                        >
-                            <input
-                                type="text"
-                                placeholder="Номер телефона"
-                                className="w-full h-[45px] sm:h-[54px] font-normal border-[1.5px] border-white bg-input-bg-contact rounded-lg outline-none text-[16px] text-white placeholder-white px-[25px]"
-                            />
-                            <button
-                                className="w-full h-[45px] sm:h-[54px] font-bold text-[18px] text-[#4762FF] text-center bg-[#fff] rounded-lg"
-                                type="submit"
-                            >
-                                Отправить
-                            </button>
-                        </form>
-                        <div className="my-5">
-                            <p className="font-normal text-[26px] text-white text-center">
-                                или позвоните на номер
-                            </p>
-                            <a
-                                href="tel:+998980013666"
-                                className="block font-normal text-[30px] text-white text-center leading-8"
-                            >
-                                {" "}
-                                +998 98 001 3 666
-                            </a>
-                        </div>
-                        <p className="max-w-[312px] w-full mx-auto text-white text-[16px] opacity-80 text-center">
-                            После получения заявки наш специалист свяжется с
-                            вами
-                        </p>
-                    </div>
                 </Modal>
             </header>
         </>

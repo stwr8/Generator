@@ -37,7 +37,7 @@ const Hero = () => {
                 slidesPerView={1}
                 effect={"fade"}
                 autoplay={{
-                    delay: 5000,
+                    delay: 3000,
                 }}
                 navigation={{
                     prevEl: navigationPrevRef.current,
@@ -47,7 +47,7 @@ const Hero = () => {
                     clickable: true,
                 }}
                 modules={[EffectFade, Navigation, Pagination, Autoplay]}
-                className="mySwiper w-full h-[700px] md:h-[650px] relative bg-hero-gradient z-40 !mt-[75.5px] sm:mt-0"
+                className="mySwiper w-full h-[700px] md:h-[650px] relative bg-hero-gradient z-40"
             >
                 <SwiperSlide>
                     <Image
@@ -102,7 +102,7 @@ const Hero = () => {
                             и монтаж генераторов в любос ассортименте
                         </p>
                         <Link
-                            href={`tel:+998980013666`}
+                            href={`contact`}
                             className="flex items-center w-fit text-white text-[18px] bg-[#4762FF] rounded-[8px] px-[30px] py-[15px] mt-[32px]"
                         >
                             Консультация

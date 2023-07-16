@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import axios from "axios";
+import { useEffect } from "react";
 
 // Images
 import Generator from "@/public/Images/generator.png";
@@ -14,7 +16,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import "./catolog.css"
+import "./catolog.css";
 
 // import required modules
 import { Navigation, Autoplay } from "swiper/modules";
@@ -103,6 +105,25 @@ const datas = [
 ];
 
 const CarouselCatalog = () => {
+    useEffect(() => {
+        axios
+            .get(
+                {
+                    headers: {
+                        Accept: "pplication/json",
+                        lang: "en",
+                    },
+                },
+                "https://generatoruz.com/product/all"
+            )
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }, []);
+
     return (
         <div className="bg-white sm:bg-[#191919] mt-5 sm:mt-[68px]">
             <div className="max-w-[1350px] w-full mx-auto px-[16px] sm:!pb-[100px]">

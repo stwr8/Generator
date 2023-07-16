@@ -1,9 +1,13 @@
+"use client";
+import { useState } from "react";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import Call from "@/public/Images/call-fixed.svg";
+import Modal from "@/components/Modal/Modal";
+import Mark_x from "@/public/Images/x.svg";
 
 // ---> Css
 import "./globals.css";
@@ -16,6 +20,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+    const [showContact, setShowContact] = useState(false);
     return (
         <html lang="en">
             <body className={inter.className}>
@@ -23,11 +28,72 @@ export default function RootLayout({ children }) {
                 {children}
                 <Footer />
                 <Link
+                    onClick={() => {
+                        setShowContact(true);
+                    }}
                     href="tel:+998900013666"
                     className="hidden sm:block fixed bottom-14 !right-[100px] w-[60px] h-[60px]  z-50 animate-bounce"
                 >
                     <Image src={Call} width={60} height={60} alt="call" />
                 </Link>
+                {/* --- Consultation --- */}
+                <Modal
+                    change={false}
+                    isVisible={showContact}
+                    onClose={() => {
+                        setShowContact(false);
+                    }}
+                >
+                    <div className="max-w-[590px] w-full py-[30px] px-[60px] relative">
+                        <button
+                            type="button"
+                            onClick={() => setShowContact(false)}
+                            className="absolute top-[20px] right-[25px] w-[30px] h-[30px]"
+                        >
+                            <Image
+                                src={Mark_x}
+                                width={30}
+                                height={30}
+                                alt="close"
+                            />
+                        </button>
+                        <h3 className="font-normal text-[30px] text-white text-center leading-9">
+                            Хотите получить бесплатную консультацию?
+                        </h3>
+                        <form
+                            autoComplete="off"
+                            className="space-y-[23px] mt-[40px]"
+                        >
+                            <input
+                                type="text"
+                                placeholder="Номер телефона"
+                                className="w-full h-[45px] sm:h-[54px] font-normal border-[1.5px] border-white bg-input-bg-contact rounded-lg outline-none text-[16px] text-white placeholder-white px-[25px]"
+                            />
+                            <button
+                                className="w-full h-[45px] sm:h-[54px] font-bold text-[18px] text-[#4762FF] text-center bg-[#fff] rounded-lg"
+                                type="submit"
+                            >
+                                Отправить
+                            </button>
+                        </form>
+                        <div className="my-5">
+                            <p className="font-normal text-[26px] text-white text-center">
+                                или позвоните на номер
+                            </p>
+                            <a
+                                href="tel:+998980013666"
+                                className="block font-normal text-[30px] text-white text-center leading-8"
+                            >
+                                {" "}
+                                +998 98 001 3 666
+                            </a>
+                        </div>
+                        <p className="max-w-[312px] w-full mx-auto text-white text-[16px] opacity-80 text-center">
+                            После получения заявки наш специалист свяжется с
+                            вами
+                        </p>
+                    </div>
+                </Modal>
             </body>
         </html>
     );

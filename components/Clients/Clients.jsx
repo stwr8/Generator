@@ -24,7 +24,7 @@ const Client = ({ title }) => {
     return (
         <section>
             {title ? (
-                <h2 className="font-bold text-[40px] sm:text-[48px] text-[#333] text-center pb-[20px] sm:pb-[30px]">
+                <h2 className="font-bold text-[40px] sm:text-[48px] text-[#333] text-center pb-[40px] sm:pb-[50px]">
                     {title}
                 </h2>
             ) : null}
@@ -32,7 +32,7 @@ const Client = ({ title }) => {
                 <div className="flex items-center space-x-[30px]">
                     {datas?.map((data) => (
                         <Image
-                            className="cursor-pointer w-auto h-[62px] sm:h-[102px]"
+                            className="cursor-pointer w-auto h-[82px] sm:h-[122px]"
                             key={data?.id}
                             src={data?.image}
                             alt="generator"
