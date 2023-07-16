@@ -103,7 +103,7 @@ const Services = () => {
                         />
                     </div>
                     <Image
-                        className={`hidden sm:block w-full h-[426px] rounded-[26px] ${
+                        className={`hidden sm:block w-full h-[426px] rounded-b-[50px] ${
                             data?.row ? "mr-5" : "ml-5"
                         }`}
                         src={data?.image}

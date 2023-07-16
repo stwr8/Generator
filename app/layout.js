@@ -32,9 +32,9 @@ export default function RootLayout({ children }) {
                         setShowContact(true);
                     }}
                     href="tel:+998900013666"
-                    className="hidden sm:block fixed bottom-14 !right-[100px] w-[60px] h-[60px]  z-50 animate-bounce"
+                    className="hidden sm:block fixed bottom-14 !right-[100px] w-[90px] h-[90px] z-50 animate-bounce"
                 >
-                    <Image src={Call} width={60} height={60} alt="call" />
+                    <Image src={Call} width={90} height={90} alt="call" />
                 </Link>
                 {/* --- Consultation --- */}
                 <Modal
