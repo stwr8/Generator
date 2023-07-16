@@ -105,25 +105,6 @@ const datas = [
 ];
 
 const CarouselCatalog = () => {
-    useEffect(() => {
-        axios
-            .get(
-                {
-                    headers: {
-                        Accept: "pplication/json",
-                        lang: "en",
-                    },
-                },
-                "https://generatoruz.com/product/all"
-            )
-            .then((res) => {
-                console.log(res);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }, []);
-
     return (
         <div className="bg-white sm:bg-[#191919] mt-5 sm:mt-[68px]">
             <div className="max-w-[1350px] w-full mx-auto px-[16px] sm:!pb-[100px]">
