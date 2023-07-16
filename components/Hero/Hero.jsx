@@ -47,7 +47,7 @@ const Hero = () => {
                     clickable: true,
                 }}
                 modules={[EffectFade, Navigation, Pagination, Autoplay]}
-                className="mySwiper w-full h-[700px] md:h-[650px] relative bg-hero-gradient z-50"
+                className="mySwiper w-full h-[700px] md:h-[650px] relative bg-hero-gradient z-40 !mt-[75.5px] sm:mt-0"
             >
                 <SwiperSlide>
                     <Image

@@ -112,7 +112,7 @@ const Header = () => {
 
     return (
         <>
-            <header className={`container relative`}>
+            <header className={`container relative bg-white`}>
                 {/* --- Header top --- */}
                 <div className="hidden md:flex items-center justify-end py-[11px] border-b-[1px]">
                     <ul className="flex items-center space-x-5">
@@ -230,7 +230,7 @@ const Header = () => {
                     </button>
                 </div>
                 {/* --- Header bottom --- */}
-                <div className="w-full flex items-center justify-between py-[18px]">
+                <div className="fixed top-0 left-0 sm:static z-50 bg-white w-full flex items-center justify-between px-4 py-[18px]">
                     <Link className="flex items-center" href="/">
                         <Image
                             className="w-[25px] h-[25px] md:w-[41px] md:h-[41px]"

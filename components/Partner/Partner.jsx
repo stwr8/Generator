@@ -54,7 +54,7 @@ const Partner = () => {
                     className="sm:flex sm:items-center sm:justify-between pb-5 sm:pb-10 mt-8"
                 >
                     <div className="max-w-[430px] w-full">
-                        <h2 className="font-bold text-[24px] sm:text-[30px] text-[#333] leading-8">
+                        <h2 className="font-bold text-[24px] sm:text-[30px] text-[#333] leading-8 text-center">
                             {data?.title}
                         </h2>
                         <p className="font-medium text-[18px] text-text-color leading-normal mt-5">

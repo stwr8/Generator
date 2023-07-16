@@ -15,7 +15,7 @@ const Hero = ({ title, text, link, route, bgImage }) => {
                     : bgImage == "contact"
                     ? "bg-hero-fifth-mobile sm:bg-hero-fifth"
                     : null
-            } bg-no-repeat bg-cover`}
+            } bg-no-repeat bg-cover mt-[75.7px] sm:mt-0`}
         >
             <div className="container ">
                 <div className="hidden sm:flex items-center pt-[6px]">
@@ -32,7 +32,7 @@ const Hero = ({ title, text, link, route, bgImage }) => {
                 <div
                     className={`${
                         bgImage == "partner" || "contact"
-                            ? "pt-[170px] sm:pt-[180px] pb-[206px] sm:pb-[213px]"
+                            ? "pt-[170px] sm:pt-[200px] pb-[420px] sm:pb-[213px]"
                             : "pt-[170px] sm:pt-[137px] pb-[206px] sm:pb-[166px]"
                     } sm:max-w-[630px] w-full `}
                 >

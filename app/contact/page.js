@@ -1,4 +1,6 @@
 import Hero from "@/components/HeroForPage/Hero";
+import Location from "@/components/Location/Location";
+import ContactSection from "@/components/ContactSection/ContactSection";
 
 const Catalog = () => {
     return (
@@ -10,6 +12,8 @@ const Catalog = () => {
                 link={false}
                 bgImage={"contact"}
             />
+            <ContactSection />
+            <Location />
         </>
     );
 };
