@@ -107,7 +107,7 @@ const Footer = () => {
                 </Link>
             </div>
             <p className="container sm:!p-0 font-normal text-[12px] text-[#D9DBE1] !mt-[18px]">
-                2023 YOUR COMPANY LLC
+                СП ООО «POWER MET INTERNATIONAL»
             </p>
         </div>
     );
