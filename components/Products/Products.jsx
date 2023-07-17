@@ -93,13 +93,14 @@ const datas = [
 const Product = () => {
     const [drop, setDrop] = useState(false);
     const [drop1, setDrop1] = useState(false);
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
         axios
-            .get("https://generatoruz.com/category/all", {
+            .get("http://128.199.132.13:6161/category/all", {
                 headers: { lang: "en" },
             })
-            .then((res) => console.log(res))
+            .then((res) => setCategories(res?.data?.data?.result))
             .catch((err) => console.log(err));
     }, []);
 

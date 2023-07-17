@@ -9,7 +9,7 @@ import Call from "../../public/Images/call.svg";
 import Planet_Black from "../../public/Images/planet_black.svg";
 import Planet from "../../public/Images/planet.svg";
 import Vector from "../../public/Images/vector.svg";
-import Logo from "../../public/Images/power.png";
+import Logo from "../../public/Images/logoP.png";
 import CallWhite from "../../public/Images/call_white.svg";
 import Search from "../../public/Images/search.svg";
 
@@ -253,7 +253,7 @@ const Header = () => {
                 >
                     <Link className="flex items-center" href="/">
                         <Image
-                            className="w-[120px] h-[30px] md:w-[200px] md:h-[50px]"
+                            className="w-[40px] sm:w-[48px] h-[35px] sm:h-[41px]"
                             src={Logo}
                             alt="site-logo"
                         />
@@ -421,54 +421,38 @@ const Header = () => {
                         >
                             <Link className="flex items-center" href="/">
                                 <Image
-                                    className="w-[150px] h-[35px] md:w-[200px] md:h-[50px]"
+                                    className="w-[40px] h-[35px]"
                                     src={Logo}
                                     alt="site-logo"
                                 />
                             </Link>
                         </div>
-                        <div className="md:hidden flex items-center space-x-4">
-                            <div className="relative flex items-center">
-                                <input
-                                    className="max-w-[140px] w-full pl-[35px] pr-[8px] py-[7px] border-[1.5px] outline-none border-white focus:border-[#4762FF] rounded-[6px] text-base text-[#4F6E7B]"
-                                    type="text"
-                                    placeholder="Поиск"
-                                />
-                                <Image
-                                    className="absolute left-[8px]"
-                                    src={Search}
-                                    width={22}
-                                    height={22}
-                                    alt="search"
-                                />
-                            </div>
-                            <button
-                                className="flex flex-col justify-between w-[26px] h-5 sm:hidden"
-                                onClick={() => {
-                                    setShowModal(!showModal);
-                                }}
-                            >
-                                <span
-                                    className={`${
-                                        showModal
-                                            ? "-rotate-45 translate-y-[8.8px]"
-                                            : ""
-                                    } inline-block w-full border border-black opacity-50 duration-300`}
-                                ></span>
-                                <span
-                                    className={`${
-                                        showModal ? "hidden" : ""
-                                    } inline-block w-[60%] border border-black opacity-50`}
-                                ></span>
-                                <span
-                                    className={`${
-                                        showModal
-                                            ? "rotate-45 -translate-y-[8.8px]"
-                                            : ""
-                                    } inline-block w-full border border-black opacity-50 duration-300`}
-                                ></span>
-                            </button>
-                        </div>
+                        <button
+                            className="flex flex-col justify-between w-[26px] h-5 sm:hidden"
+                            onClick={() => {
+                                setShowModal(!showModal);
+                            }}
+                        >
+                            <span
+                                className={`${
+                                    showModal
+                                        ? "-rotate-45 translate-y-[8.8px]"
+                                        : ""
+                                } inline-block w-full border border-black opacity-50 duration-300`}
+                            ></span>
+                            <span
+                                className={`${
+                                    showModal ? "hidden" : ""
+                                } inline-block w-[60%] border border-black opacity-50`}
+                            ></span>
+                            <span
+                                className={`${
+                                    showModal
+                                        ? "rotate-45 -translate-y-[8.8px]"
+                                        : ""
+                                } inline-block w-full border border-black opacity-50 duration-300`}
+                            ></span>
+                        </button>
                     </div>
                     <nav className="block md:hidden mt-[30px]">
                         <ul className="flex items-center flex-col text-center space-y-5">

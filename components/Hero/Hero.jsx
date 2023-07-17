@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -27,6 +27,23 @@ import { EffectFade, Navigation, Pagination, Autoplay } from "swiper/modules";
 import "./hero.css";
 
 const Hero = () => {
+    const [windowSize, setWindowSize] = useState(0);
+    console.log(windowSize);
+
+    // ---> Window width
+    useEffect(() => {
+        function handleResize() {
+            setWindowSize(window.innerWidth);
+        }
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
     return (
         <>
             <Swiper
@@ -35,14 +52,14 @@ const Hero = () => {
                 autoplay={{
                     delay: 3000,
                 }}
-                navigation={true}
+                navigation={false}
                 pagination={{
                     clickable: true,
                 }}
                 modules={[EffectFade, Navigation, Pagination, Autoplay]}
-                className="mySwiper w-full h-[700px] md:h-[650px] bg-hero-gradient z-40"
+                className="mySwiper1 w-full h-[700px] md:h-[650px] bg-hero-gradient z-40"
             >
-                <SwiperSlide>
+                <SwiperSlide className="swiperSlide1">
                     <Image
                         className="hidden md:block object-cover"
                         src={Hero_bg}
@@ -56,7 +73,7 @@ const Hero = () => {
                         alt="bg"
                     />
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className="swiperSlide1">
                     <Image
                         className="hidden md:block object-cover"
                         src={Hero_bg1}
@@ -70,7 +87,7 @@ const Hero = () => {
                         alt="bg"
                     />
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className="swiperSlide1">
                     <Image
                         className="hidden md:block object-cover"
                         src={Hero_bg2}
