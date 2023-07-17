@@ -47,14 +47,14 @@ const Header = () => {
         };
     }, []);
 
-    let lastScrollY = window.scrollY;
-    window.addEventListener("scroll", () => {
-        if (lastScrollY < window.scrollY) {
-            setScrollDown("bg-white");
-        } else {
-            setScrollDown("");
-        }
-    });
+    // let lastScrollY = window.scrollY;
+    // window.addEventListener("scroll", () => {
+    //     if (lastScrollY < window.scrollY) {
+    //         setScrollDown("bg-white");
+    //     } else {
+    //         setScrollDown("");
+    //     }
+    // });
 
     // ---> Change Language
     const ChangeUzb = () => {
