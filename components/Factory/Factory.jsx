@@ -8,13 +8,20 @@ const Factory = () => {
     return (
         <section className="bg-white">
             <div className="container flex flex-col sm:flex-row items-center justify-between !pt-5 sm:!pt-[68px]">
-                <Image className="max-w-[530px] w-full h-[410px] rounded-b-[50px] object-cover"
+                <Image
+                    data-aos="fade-up-right"
+                    data-aos-duration="600"
+                    className="max-w-[530px] w-full h-[410px] rounded-b-[50px] object-cover"
                     src={FactotyImage}
                     width={530}
                     height={410}
                     alt="factory"
                 />
-                <div className="max-w-[540px] w-full">
+                <div
+                    data-aos="fade-up-left"
+                    data-aos-duration="600"
+                    className="max-w-[540px] w-full"
+                >
                     <h2 className="font-bold text-[40px] sm:text-[48px] text-[#333] sm:text-center mt-2">
                         O нас
                     </h2>

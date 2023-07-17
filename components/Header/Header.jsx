@@ -6,14 +6,15 @@ import Modal from "../Modal/Modal";
 
 // ---> Images
 import Call from "../../public/Images/call.svg";
-import Planet from "../../public/Images/planet.svg";
+import Planet_Black from "../../public/Images/planet_black.svg";
 import Vector from "../../public/Images/vector.svg";
-import Logo from "../../public/Images/logo.svg";
+import Logo from "../../public/Images/power.png";
 import CallWhite from "../../public/Images/call_white.svg";
 import Search from "../../public/Images/search.svg";
 
 const Header = () => {
     const [showModal, setShowModal] = useState(false);
+    const [scrollDown, setScrollDown] = useState("");
 
     // ---> Dropdown
     const [drop, setDrop] = useState(false);
@@ -29,9 +30,11 @@ const Header = () => {
 
     // ---> Close dropdown
     useEffect(() => {
-        // ---> Close dropdown
         const handleClick = (e) => {
-            if (e.target.id !== "wrapper") setDrop(false);
+            if (e.target.id !== "wrapper") {
+                setDrop(false);
+                setDrop1(false);
+            }
         };
         if (typeof window !== "undefined") {
             window.addEventListener("click", handleClick);
@@ -43,6 +46,15 @@ const Header = () => {
             }
         };
     }, []);
+
+    let lastScrollY = window.scrollY;
+    window.addEventListener("scroll", () => {
+        if (lastScrollY < window.scrollY) {
+            setScrollDown("bg-white");
+        } else {
+            setScrollDown("");
+        }
+    });
 
     // ---> Change Language
     const ChangeUzb = () => {
@@ -146,7 +158,7 @@ const Header = () => {
                     <span className="inline-block h-[50px] w-[1px] bg-[#333333] opacity-10 ml-[23px] mr-[10px]"></span>
                     {/* ------ Dropdown ------ */}
                     <Image
-                        src={Planet}
+                        src={Planet_Black}
                         width={20}
                         height={20}
                         alt="Picture of the author"
@@ -229,16 +241,15 @@ const Header = () => {
                     </button>
                 </div>
                 {/* --- Header bottom --- */}
-                <div className="fixed top-0 left-0 sm:static z-50 bg-white w-full flex items-center justify-between px-4 py-[18px]">
+                <div
+                    className={`!${scrollDown} fixed top-0 left-0 sm:static z-50 bg-white bg-opacity-40 backdrop-blur-sm w-full flex items-center justify-between px-4 py-[18px]`}
+                >
                     <Link className="flex items-center" href="/">
                         <Image
-                            className="w-[25px] h-[25px] md:w-[41px] md:h-[41px]"
+                            className="w-[120px] h-[30px] md:w-[200px] md:h-[50px]"
                             src={Logo}
                             alt="site-logo"
                         />
-                        <p className="font-medium text-xl text-[#333] ml-[6px]">
-                            Generators
-                        </p>
                     </Link>
                     <nav className="hidden md:block">
                         <ul className="flex items-center space-x-[46px]">
@@ -251,11 +262,14 @@ const Header = () => {
                             <li className="font-medium text-base text-[#333] hover:text-[#4762FF] transition ease-in-out duration-200 uppercase">
                                 <Link href={"/about"}>О нас</Link>
                             </li>
+                            <li className="font-medium text-base text-[#333] hover:text-[#4762FF] transition ease-in-out duration-200 uppercase">
+                                <Link href={"/partner"}>ПАРТНЕРЫ</Link>
+                            </li>
                         </ul>
                     </nav>
                     <div className="hidden md:flex items-center">
                         <input
-                            className="relative max-w-[120px] w-full pl-[43px] pr-[8px] py-[8px] border-[1.5px] outline-none border-white focus:border-[#4762FF] rounded-[6px] text-base text-[#4F6E7B] mr-5"
+                            className="relative max-w-[120px] w-full pl-[43px] pr-[8px] py-[8px] border-[1.5px] outline-none border-white focus:border-[#4762FF] rounded-[6px] text-base text-[#4F6E7B] !bg-transparent mr-5"
                             type="text"
                             placeholder="Поиск"
                         />
@@ -281,7 +295,7 @@ const Header = () => {
                             </p>
                         </Link>
                     </div>
-                    <div className="md:hidden flex items-center space-x-4">
+                    <div className="md:hidden flex items-center space-x-4 ml-10">
                         <div className="relative flex items-center">
                             <input
                                 className="max-w-[140px] w-full pl-[35px] pr-[8px] py-[7px] border-[1.5px] outline-none border-white focus:border-[#4762FF] rounded-[6px] text-base text-[#4F6E7B]"
@@ -296,8 +310,68 @@ const Header = () => {
                                 alt="search"
                             />
                         </div>
+                        <div className="flex items-center relative z-50 duration-200">
+                            {/* ------ Dropdown ------ */}
+                            <Image
+                                onClick={() => {
+                                    setDrop1(!drop1);
+                                }}
+                                id="wrapper"
+                                className="w-[25px] h-[25px] "
+                                src={Planet_Black}
+                                width={25}
+                                height={25}
+                                alt="Picture of the author"
+                            />
+                            {drop1 ? (
+                                <ul className="absolute z-50 -left-[30px] top-[50px] lg:top-[47px] w-[80px] bg-gray-100 rounded-b-lg duration-500 !text-center">
+                                    <li
+                                        onClick={ChangeUzb}
+                                        className="flex font-medium items-center justify-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
+                                    >
+                                        Uz
+                                    </li>
+                                    <li
+                                        onClick={ChangeRus}
+                                        className="flex font-medium items-center justify-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
+                                    >
+                                        Ru
+                                    </li>
+                                    <li
+                                        onClick={ChangeEng}
+                                        className="flex font-medium items-center justify-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
+                                    >
+                                        En
+                                    </li>
+                                    <li
+                                        onClick={ChangeTg}
+                                        className="flex font-medium items-center justify-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
+                                    >
+                                        Tg
+                                    </li>
+                                    <li
+                                        onClick={ChangeTr}
+                                        className="flex font-medium items-center justify-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
+                                    >
+                                        Tr
+                                    </li>
+                                    <li
+                                        onClick={ChangeKaz}
+                                        className="flex font-medium items-center justify-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
+                                    >
+                                        Kz
+                                    </li>
+                                    <li
+                                        onClick={ChangeKy}
+                                        className="flex font-medium items-center justify-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 rounded-lg"
+                                    >
+                                        Ky
+                                    </li>
+                                </ul>
+                            ) : null}
+                        </div>
                         <button
-                            className="flex flex-col justify-between w-[26px] h-5 sm:hidden"
+                            className="flex flex-col justify-between !w-[35px] h-5 sm:hidden"
                             onClick={() => {
                                 setShowModal(true);
                             }}
@@ -307,19 +381,19 @@ const Header = () => {
                                     showModal
                                         ? "-rotate-45 translate-y-[8.8px]"
                                         : ""
-                                } inline-block w-full border border-[#4762FF] duration-300`}
+                                } inline-block w-full border border-black opacity-50 duration-300`}
                             ></span>
                             <span
                                 className={`${
                                     showModal ? "hidden" : ""
-                                } inline-block w-[60%] border border-[#4762FF]`}
+                                } inline-block w-[60%] border border-black opacity-50`}
                             ></span>
                             <span
                                 className={`${
                                     showModal
                                         ? "rotate-45 -translate-y-[8.8px]"
                                         : ""
-                                } inline-block w-full border border-[#4762FF] duration-300`}
+                                } inline-block w-full border border-black opacity-50 duration-300`}
                             ></span>
                         </button>
                     </div>
@@ -333,20 +407,17 @@ const Header = () => {
                         setShowModal(false);
                     }}
                 >
-                    <div className="flex items-center justify-between py-[18px]">
+                    <div className="flex items-center justify-between py-[18px] ">
                         <div
                             onClick={() => setShowModal(false)}
                             className="flex items-center justify-between"
                         >
                             <Link className="flex items-center" href="/">
                                 <Image
-                                    className="w-[25px] h-[25px] md:w-[41px] md:h-[41px]"
+                                    className="w-[150px] h-[35px] md:w-[200px] md:h-[50px]"
                                     src={Logo}
                                     alt="site-logo"
                                 />
-                                <p className="font-medium text-xl text-[#333] ml-[6px]">
-                                    Generators
-                                </p>
                             </Link>
                         </div>
                         <div className="md:hidden flex items-center space-x-4">
@@ -375,19 +446,19 @@ const Header = () => {
                                         showModal
                                             ? "-rotate-45 translate-y-[8.8px]"
                                             : ""
-                                    } inline-block w-full border border-[#4762FF] duration-300`}
+                                    } inline-block w-full border border-black opacity-50 duration-300`}
                                 ></span>
                                 <span
                                     className={`${
                                         showModal ? "hidden" : ""
-                                    } inline-block w-[60%] border border-[#4762FF]`}
+                                    } inline-block w-[60%] border border-black opacity-50`}
                                 ></span>
                                 <span
                                     className={`${
                                         showModal
                                             ? "rotate-45 -translate-y-[8.8px]"
                                             : ""
-                                    } inline-block w-full border border-[#4762FF] duration-300`}
+                                    } inline-block w-full border border-black opacity-50 duration-300`}
                                 ></span>
                             </button>
                         </div>
@@ -412,6 +483,12 @@ const Header = () => {
                             >
                                 <Link href={"/about"}>О нас</Link>
                             </li>
+                            <li
+                                onClick={() => setShowModal(false)}
+                                className="font-medium text-base text-[#333] hover:text-[#4762FF] transition ease-in-out duration-200 uppercase"
+                            >
+                                <Link href={"/partner"}>ПАРТНЕРЫ</Link>
+                            </li>
                         </ul>
                     </nav>
                     <ul className="flex items-center flex-col text-center space-y-5 mt-5">
@@ -433,95 +510,6 @@ const Header = () => {
                                     +998 98 001 3666
                                 </p>
                             </Link>
-                        </li>
-                        <li className="flex items-center">
-                            {/* ------ Dropdown ------ */}
-                            <Image
-                                src={Planet}
-                                width={20}
-                                height={20}
-                                alt="Picture of the author"
-                            />
-                            <button
-                                className="relative flex items-center z-50 dsuration-200 font-medium text-base text-black px-2"
-                                onClick={() => {
-                                    setDrop1(!drop1);
-                                    if (showModal === false) {
-                                        setDrop1(false);
-                                    }
-                                }}
-                            >
-                                {uzb
-                                    ? "Uz"
-                                    : rus
-                                    ? "Ru"
-                                    : eng
-                                    ? "En"
-                                    : tr
-                                    ? "Tr"
-                                    : tg
-                                    ? "Tg"
-                                    : kaz
-                                    ? "Kz"
-                                    : ky
-                                    ? "Ky"
-                                    : null}
-                                <Image
-                                    className={`duration-200 ml-2 ${
-                                        drop1 ? "-rotate-180" : ""
-                                    }`}
-                                    src={Vector}
-                                    width={10}
-                                    height={6}
-                                    alt="Picture of the author"
-                                />
-                                {drop1 ? (
-                                    <ul className="absolute grid grid-cols-2 z-50 -left-[80px] top-[43px] lg:top-[47px] w-[200px] bg-[#ececec] border rounded-lg duration-500">
-                                        <li
-                                            onClick={ChangeUzb}
-                                            className="flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 text-center rounded-lg"
-                                        >
-                                            Uz
-                                        </li>
-                                        <li
-                                            onClick={ChangeRus}
-                                            className="flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 text-center rounded-lg"
-                                        >
-                                            Ru
-                                        </li>
-                                        <li
-                                            onClick={ChangeEng}
-                                            className="flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 text-center rounded-lg"
-                                        >
-                                            En
-                                        </li>
-                                        <li
-                                            onClick={ChangeTg}
-                                            className="flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 text-center rounded-lg"
-                                        >
-                                            Tg
-                                        </li>
-                                        <li
-                                            onClick={ChangeTr}
-                                            className="flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 text-center rounded-lg"
-                                        >
-                                            Tr
-                                        </li>
-                                        <li
-                                            onClick={ChangeKaz}
-                                            className="flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 text-center rounded-lg"
-                                        >
-                                            Kz
-                                        </li>
-                                        <li
-                                            onClick={ChangeKy}
-                                            className="flex font-medium items-center text-sm hover:bg-[#4762FF] text-[#454545] hover:text-white duration-300 py-1 px-3 text-center rounded-lg"
-                                        >
-                                            Ky
-                                        </li>
-                                    </ul>
-                                ) : null}
-                            </button>
                         </li>
                     </ul>
                 </Modal>

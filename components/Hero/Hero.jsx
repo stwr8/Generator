@@ -10,8 +10,6 @@ import Hero_bg2 from "@/public/Images/hero_car2.png";
 import Hero_bg_mobile from "@/public/Images/hero_car_mobile.png";
 import Hero_bg_mobile1 from "@/public/Images/hero_car_mobile1.png";
 import Hero_bg_mobile2 from "@/public/Images/hero_car_mobile2.png";
-import Prev from "@/public/Images/prev.svg";
-import Next from "@/public/Images/next.svg";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -29,8 +27,6 @@ import { EffectFade, Navigation, Pagination, Autoplay } from "swiper/modules";
 import "./hero.css";
 
 const Hero = () => {
-    const navigationPrevRef = React.useRef(null);
-    const navigationNextRef = React.useRef(null);
     return (
         <>
             <Swiper
@@ -39,19 +35,16 @@ const Hero = () => {
                 autoplay={{
                     delay: 3000,
                 }}
-                navigation={{
-                    prevEl: navigationPrevRef.current,
-                    nextEl: navigationNextRef.current,
-                }}
+                navigation={false}
                 pagination={{
                     clickable: true,
                 }}
                 modules={[EffectFade, Navigation, Pagination, Autoplay]}
-                className="mySwiper w-full h-[700px] md:h-[650px] relative bg-hero-gradient z-40 mt-[75.7px] sm:mt-0"
+                className="mySwiper w-full h-[700px] md:h-[650px] bg-hero-gradient z-40"
             >
                 <SwiperSlide>
                     <Image
-                        className="hidden md:block"
+                        className="hidden md:block object-cover"
                         src={Hero_bg}
                         layout="fill"
                         alt="bg"
@@ -65,7 +58,7 @@ const Hero = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
-                        className="hidden md:block"
+                        className="hidden md:block object-cover"
                         src={Hero_bg1}
                         layout="fill"
                         alt="bg"
@@ -79,7 +72,7 @@ const Hero = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
-                        className="hidden md:block"
+                        className="hidden md:block object-cover"
                         src={Hero_bg2}
                         layout="fill"
                         alt="bg"
@@ -92,7 +85,7 @@ const Hero = () => {
                     />
                 </SwiperSlide>
 
-                <div className="container absolute inset-0 top-[110px] z-10">
+                <div className="container absolute inset-0 top-[110px] !pt-[75.7px] sm:!pt-0 z-10">
                     <div className="max-w-[582px] w-full">
                         <h1 className="font-bold text-[30px] md:text-[40px] text-white uppercase">
                             Мы поставляем бензиновые и дизельные генераторы
@@ -108,7 +101,7 @@ const Hero = () => {
                             Консультация
                         </Link>
                     </div>
-                    <div className="hidden absolute bottom-[60%] right-0 md:flex items-center">
+                    {/* <div className="hidden absolute bottom-[60%] right-0 md:flex items-center">
                         <div
                             ref={navigationPrevRef}
                             className="cursor-pointer rounded-full hover:scale-125 duration-200"
@@ -121,7 +114,7 @@ const Hero = () => {
                         >
                             <Image src={Next} width={60} height={60} alt="bg" />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </Swiper>
         </>

@@ -107,7 +107,7 @@ const Product = () => {
                             onClick={() => setDrop(!drop)}
                             className="w-full h-[43px] flex items-center justify-between font-medium text-[18px] leading-[27px] text-black px-[15px] uppercase"
                         >
-                            Бренды{" "}
+                            Производители{" "}
                             <Image
                                 className={`${
                                     drop ? "rotate-180" : "rotate-0"

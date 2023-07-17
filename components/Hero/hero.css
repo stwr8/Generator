@@ -1,23 +1,3 @@
-.swiper-button-prev::after {
-    content: "";
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background-image: url("../../public/Images/prev.svg") !important;
-    background-repeat: no-repeat;
-    background-size: cover !important;
-}
-
-.swiper-button-next::after {
-    content: "";
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background-image: url("../../public/Images/next.svg") !important;
-    background-repeat: no-repeat;
-    background-size: cover !important;
-}
-
 .swiper-pagination-bullet {
     width: 100px;
     height: 1px;

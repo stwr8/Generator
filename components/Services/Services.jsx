@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 // Images
-import ServeceImg from "@/public/Images/service.png";
 import Factory from "@/public/Images/factory.png";
 import News from "@/public/Images/news.png";
 import News1 from "@/public/Images/news1.png";
@@ -9,6 +8,7 @@ import News2 from "@/public/Images/news2.png";
 import News3 from "@/public/Images/news3.png";
 import News4 from "@/public/Images/news4.png";
 import News5 from "@/public/Images/news5.png";
+import News6 from "@/public/Images/news6.png";
 
 let datas = [
     {
@@ -55,7 +55,7 @@ let datas = [
         id: 6,
         row: true,
         title: "АВАРИЙНАЯ ПОДДЕРЖКА И СЕРВИСНАЯ ПОДДЕРЖКА ПРИ СБОЯХ 7/24",
-        image: ServeceImg,
+        image: News6,
         description:
             "Благодаря нашей команде квалифицированных экспертов, принимающих быстрые и эффективные решения, мы предоставляем сервисную поддержку нашим клиентам в аварийных ситуациях, связанных со сбоем работы наших генераторов. <br/> Вместе с нашими опытными специалистами, услуги которых доступны 24 часа в сутки 7 дней в неделю, мы прилагаем все усилия для обеспечения минимального уровня потерь энергии.",
     },
@@ -87,12 +87,21 @@ const Services = () => {
                         data?.row ? "flex-row-reverse" : ""
                     } sm:flex sm:items-srart sm:justify-between border-b-[1px] border-[#333] pb-5 sm:pb-10`}
                 >
-                    <div className="max-w-[430px] w-full">
+                    <div
+                        data-aos={`${
+                            data?.row ? "fade-up-left" : "fade-up-right"
+                        }`}
+                        data-aos-duration="500"
+                        className="max-w-[430px] w-full"
+                    >
                         <h2 className="font-bold text-[24px] sm:text-[30px] text-[#333] leading-8">
                             {data?.title}
                         </h2>
                         {data?.description?.split("<br/>").map((item, id) => (
-                            <p key={id} className="font-medium text-[18px] text-text-color leading-normal mt-2">
+                            <p
+                                key={id}
+                                className="font-medium text-[18px] text-text-color leading-normal mt-2"
+                            >
                                 {item}
                             </p>
                         ))}
@@ -103,7 +112,11 @@ const Services = () => {
                         />
                     </div>
                     <Image
-                        className={`hidden sm:block w-full h-[426px] rounded-b-[50px] ${
+                        data-aos={`${
+                            data?.row ? "fade-up-right" : "fade-up-left"
+                        }`}
+                        data-aos-duration="500"
+                        className={`hidden sm:block w-full h-[426px] rounded-b-[50px] object-cover ${
                             data?.row ? "mr-5" : "ml-5"
                         }`}
                         src={data?.image}

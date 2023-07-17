@@ -82,7 +82,6 @@ a {
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #4762ff;
-    border-radius: 5px;
 }
 
 /* Handle on hover */

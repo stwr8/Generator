@@ -106,9 +106,9 @@ const datas = [
 
 const CarouselCatalog = () => {
     return (
-        <div className="bg-white sm:bg-[#191919] mt-5 sm:mt-[68px]">
+        <div className="bg-white mt-5 sm:mt-[68px]">
             <div className="max-w-[1350px] w-full mx-auto px-[16px] sm:!pb-[100px]">
-                <h2 className="font-bold text-[40px] sm:text-[48px] text-[#333] sm:text-white text-center py-[30px] sm:py-[57px]">
+                <h2 className="font-bold text-[40px] sm:text-[48px] text-[#333] text-center py-[30px] sm:py-[57px]">
                     Наш каталог
                 </h2>
                 <Swiper

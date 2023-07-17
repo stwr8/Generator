@@ -1,9 +1,13 @@
 const FormContact = () => {
     return (
-        <section className="bg-contact-pattern bg-no-repeat bg-cover pt-[90px] sm:pt-[120px] pb-[90px] mt-[30px] sm:mt-[57px]">
+        <section className="bg-contact-pattern bg-no-repeat bg-cover bg-fixed pt-[90px] sm:pt-[120px] pb-[90px] mt-[30px] sm:mt-[57px]">
             <div className="container flex items-center justify-between">
                 <p></p>
-                <div className="max-w-[590px] w-full py-[30px] px-[45px] bg-[#4762FF] rounded-[10px]">
+                <div
+                    data-aos="fade-left"
+                    data-aos-duration="600"
+                    className="max-w-[590px] w-full py-[30px] px-[45px] bg-[#4762FF] rounded-[10px]"
+                >
                     <h3 className="font-normal text-[30px] text-white text-center leading-9">
                         Хотите получить бесплатную консультацию?
                     </h3>
