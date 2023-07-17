@@ -7,9 +7,6 @@ import Link from "next/link";
 import Hero_bg from "@/public/Images/hero_car.jpg";
 import Hero_bg1 from "@/public/Images/hero_car1.png";
 import Hero_bg2 from "@/public/Images/hero_car2.png";
-import Hero_bg_mobile from "@/public/Images/hero_car_mobile.png";
-import Hero_bg_mobile1 from "@/public/Images/hero_car_mobile1.png";
-import Hero_bg_mobile2 from "@/public/Images/hero_car_mobile2.png";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -61,42 +58,24 @@ const Hero = () => {
             >
                 <SwiperSlide className="swiperSlide1">
                     <Image
-                        className="hidden md:block object-cover"
+                        className="object-cover"
                         src={Hero_bg}
                         layout="fill"
                         alt="bg"
                     />
-                    <Image
-                        className="block md:hidden"
-                        src={Hero_bg_mobile}
-                        layout="fill"
-                        alt="bg"
-                    />
                 </SwiperSlide>
                 <SwiperSlide className="swiperSlide1">
                     <Image
-                        className="hidden md:block object-cover"
+                        className="object-cover"
                         src={Hero_bg1}
                         layout="fill"
                         alt="bg"
                     />
-                    <Image
-                        className="block md:hidden"
-                        src={Hero_bg_mobile1}
-                        layout="fill"
-                        alt="bg"
-                    />
                 </SwiperSlide>
                 <SwiperSlide className="swiperSlide1">
                     <Image
-                        className="hidden md:block object-cover"
+                        className="object-cover"
                         src={Hero_bg2}
-                        layout="fill"
-                        alt="bg"
-                    />
-                    <Image
-                        className="block md:hidden"
-                        src={Hero_bg_mobile2}
                         layout="fill"
                         alt="bg"
                     />
