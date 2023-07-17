@@ -1,3 +1,11 @@
+.swiper-button-prev {
+    left: 16px;
+}
+
+.swiper-button-next {
+    right: 16px;
+}
+
 .swiper-pagination-bullet {
     width: 100px;
     height: 1px;

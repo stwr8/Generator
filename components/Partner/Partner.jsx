@@ -4,14 +4,14 @@ import Client from "../Clients/Clients";
 
 // Images
 import PartnerImg from "@/public/Images/partner.png";
-import PartnerImgMobile from "@/public/Images/partner-mobila.png";
+import PartnerImgMobile from "@/public/Images/news.png";
 
 let datas = [
     {
         id: 1,
-        title: "Юридическое название производителя",
+        title: "С КЕМ МЫ РАБОТАЕМ?",
         description:
-            "Прежде всего, компания для удовлетворения потребностей проектов наиболее эффективным образом выполняет расчет мощности и определяет подходящее местоположение для установки генератора. Перед тем, как выбрать генератор команда экспертов нашей компании проводит предварительную работу с целью определения необходимой потребности в энергии и подходящего места для установки ",
+            "Наша фирма гордится партнерством с лучшими производителями индустриальных генераторов. В качестве ведущего импортера, наша компания представляет их продукцию на рынке. Мы стремимся предлагать клиентам только лучшие генераторы, обеспечивая надежное и эффективное энергоснабжение в различных отраслях и сферах деятельности.",
     },
 ];
 
@@ -54,14 +54,14 @@ const Partner = () => {
                     className="sm:flex sm:items-center sm:justify-between pb-5 sm:pb-10 mt-8"
                 >
                     <div className="max-w-[430px] w-full">
-                        <h2 className="font-bold text-[24px] sm:text-[30px] text-[#333] leading-8 text-center">
+                        <h2 className="font-bold text-[24px] sm:text-[30px] text-[#333] leading-8">
                             {data?.title}
                         </h2>
                         <p className="font-medium text-[18px] text-text-color leading-normal mt-5">
                             {data?.description}
                         </p>
                         <Image
-                            className="block sm:hidden w-full h-[248px] rounded-b-[26px] mt-5"
+                            className="block sm:hidden w-full h-[248px] rounded-b-[26px] mt-5 object-cover"
                             src={PartnerImgMobile}
                             alt="service-image"
                         />
@@ -79,7 +79,7 @@ const Partner = () => {
                         </div>
                     </div>
                     <Image
-                        className="hidden sm:block w-full h-[352px] ml-16 rounded-[26px]"
+                        className="hidden sm:block w-full h-[352px] ml-16 rounded-[26px] object-cover"
                         src={PartnerImg}
                         alt="service-image"
                     />

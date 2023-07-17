@@ -7,6 +7,7 @@ import Modal from "../Modal/Modal";
 // ---> Images
 import Call from "../../public/Images/call.svg";
 import Planet_Black from "../../public/Images/planet_black.svg";
+import Planet from "../../public/Images/planet.svg";
 import Vector from "../../public/Images/vector.svg";
 import Logo from "../../public/Images/power.png";
 import CallWhite from "../../public/Images/call_white.svg";
@@ -47,14 +48,20 @@ const Header = () => {
         };
     }, []);
 
-    // let lastScrollY = window.scrollY;
-    // window.addEventListener("scroll", () => {
-    //     if (lastScrollY < window.scrollY) {
-    //         setScrollDown("bg-white");
-    //     } else {
-    //         setScrollDown("");
-    //     }
-    // });
+    useEffect(() => {
+        let lastScrollY = window.scrollY;
+        console.log(lastScrollY);
+        const CheckScroll = () => {
+            if (lastScrollY < window.scrollY) {
+                setScrollDown("bg-white");
+            } else {
+                setScrollDown("bg-white");
+            }
+        };
+        window.addEventListener("scroll", () => {
+            CheckScroll;
+        });
+    }, [scrollDown]);
 
     // ---> Change Language
     const ChangeUzb = () => {
@@ -242,7 +249,7 @@ const Header = () => {
                 </div>
                 {/* --- Header bottom --- */}
                 <div
-                    className={`!${scrollDown} fixed top-0 left-0 sm:static z-50 bg-white bg-opacity-40 backdrop-blur-sm w-full flex items-center justify-between px-4 py-[18px]`}
+                    className={`!${scrollDown} fixed top-0 left-0 sm:static bg-white z-50 w-full flex items-center justify-between px-4 py-[18px]`}
                 >
                     <Link className="flex items-center" href="/">
                         <Image
@@ -318,7 +325,7 @@ const Header = () => {
                                 }}
                                 id="wrapper"
                                 className="w-[25px] h-[25px] "
-                                src={Planet_Black}
+                                src={Planet}
                                 width={25}
                                 height={25}
                                 alt="Picture of the author"
@@ -371,7 +378,7 @@ const Header = () => {
                             ) : null}
                         </div>
                         <button
-                            className="flex flex-col justify-between !w-[35px] h-5 sm:hidden"
+                            className="flex flex-col justify-between !w-[30px] h-5 sm:hidden"
                             onClick={() => {
                                 setShowModal(true);
                             }}
@@ -381,19 +388,19 @@ const Header = () => {
                                     showModal
                                         ? "-rotate-45 translate-y-[8.8px]"
                                         : ""
-                                } inline-block w-full border border-black opacity-50 duration-300`}
+                                } inline-block w-full border-[1.5px] bg-[#4762FF] border-[#4762FF] opacity-50 duration-300`}
                             ></span>
                             <span
                                 className={`${
                                     showModal ? "hidden" : ""
-                                } inline-block w-[60%] border border-black opacity-50`}
+                                } inline-block w-[60%] border-[1.5px] bg-[#4762FF] border-[#4762FF] opacity-50`}
                             ></span>
                             <span
                                 className={`${
                                     showModal
                                         ? "rotate-45 -translate-y-[8.8px]"
                                         : ""
-                                } inline-block w-full border border-black opacity-50 duration-300`}
+                                } inline-block w-full border-[1.5px] bg-[#4762FF] border-[#4762FF] opacity-50 duration-300`}
                             ></span>
                         </button>
                     </div>

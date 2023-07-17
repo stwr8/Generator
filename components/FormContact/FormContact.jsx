@@ -17,6 +17,7 @@ const FormContact = () => {
                     >
                         <input
                             type="text"
+                            required
                             placeholder="Номер телефона"
                             className="w-full h-[45px] sm:h-[54px] font-normal border-[1.5px] border-white bg-input-bg-contact rounded-lg outline-none text-[16px] text-white placeholder-white px-[25px]"
                         />

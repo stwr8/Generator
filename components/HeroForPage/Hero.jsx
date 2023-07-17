@@ -15,7 +15,7 @@ const Hero = ({ title, text, link, route, bgImage }) => {
                     : bgImage == "contact"
                     ? "bg-hero-fifth-mobile sm:bg-hero-fifth"
                     : null
-            } bg-no-repeat bg-cover mt-[75.7px] sm:mt-0`}
+            } bg-no-repeat bg-cover pt-[75.7px] sm:pt-0`}
         >
             <div className="container ">
                 <div className="hidden sm:flex items-center pt-[6px]">

@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Images
 import Generator from "@/public/Images/generator.png";
 import Up from "@/public/Images/chevron-right.svg";
+import axios from "axios";
 
 const datas = [
     {
@@ -93,6 +93,15 @@ const datas = [
 const Product = () => {
     const [drop, setDrop] = useState(false);
     const [drop1, setDrop1] = useState(false);
+
+    useEffect(() => {
+        axios
+            .get("https://generatoruz.com/category/all", {
+                headers: { lang: "en" },
+            })
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err));
+    }, []);
 
     return (
         <section>

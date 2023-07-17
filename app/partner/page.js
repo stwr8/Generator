@@ -7,7 +7,7 @@ const Partnership = () => {
             <Hero
                 title={"С нами работают более 7 поставщиков"}
                 text={"Здесь вы можете ознакомиться с каждым из поставщиков"}
-                route={"Партнер"}
+                route={"Партнеры"}
                 link={false}
                 bgImage={"partner"}
             />
