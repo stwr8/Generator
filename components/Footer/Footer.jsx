@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Images
-import Logo from "../../public/Images/logoP.png";
+import Logo from "../../public/Images/logoWhite.png";
 import Arrow from "../../public/Images/arrow-up.svg";
 
 const Footer = () => {
@@ -13,7 +13,7 @@ const Footer = () => {
                     <div className="flex items-center justify-between">
                         <Link className="flex items-center" href="/">
                             <Image
-                                className="w-[40px] sm:w-[48px] h-[35px] sm:h-[41px]"
+                                className="w-[140px] sm:w-[170px] h-[35px] sm:h-[50px]"
                                 src={Logo}
                                 alt="site-logo"
                             />
