@@ -2,22 +2,29 @@ import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
 // Images
-import Perkins from "@/public/Images/perkins.png";
-import Shanghai from "@/public/Images/shanghai.png";
+import Partner1 from "@/public/Images/partner1.png";
+import Partner2 from "@/public/Images/partner2.png";
+import Partner3 from "@/public/Images/partner3.png";
+import Partner4 from "@/public/Images/partner4.png";
+import Partner5 from "@/public/Images/partner5.png";
+import Partner6 from "@/public/Images/partner6.png";
+import Partner7 from "@/public/Images/partner7.png";
 
 const datas = [
-    { id: 1, image: Perkins },
-    { id: 2, image: Shanghai },
-    { id: 3, image: Perkins },
-    { id: 4, image: Shanghai },
-    { id: 5, image: Perkins },
-    { id: 6, image: Shanghai },
-    { id: 7, image: Perkins },
-    { id: 8, image: Shanghai },
-    { id: 9, image: Perkins },
-    { id: 10, image: Shanghai },
-    { id: 11, image: Perkins },
-    { id: 12, image: Shanghai },
+    { id: 1, image: Partner1 },
+    { id: 2, image: Partner2 },
+    { id: 3, image: Partner3 },
+    { id: 4, image: Partner4 },
+    { id: 5, image: Partner5 },
+    { id: 6, image: Partner6 },
+    { id: 7, image: Partner7 },
+    { id: 8, image: Partner1 },
+    { id: 9, image: Partner2 },
+    { id: 10, image: Partner3 },
+    { id: 11, image: Partner4 },
+    { id: 12, image: Partner5 },
+    { id: 13, image: Partner6 },
+    { id: 14, image: Partner7 },
 ];
 
 const Client = ({ title }) => {
@@ -28,11 +35,11 @@ const Client = ({ title }) => {
                     {title}
                 </h2>
             ) : null}
-            <Marquee speed={50} gradientWidth={0} pauseOnClick={true}>
-                <div className="flex items-center space-x-[30px]">
+            <Marquee speed={60} pauseOnClick={true}>
+                <div className="flex items-center space-x-[50px] h-[82px] sm:h-[102px]">
                     {datas?.map((data) => (
                         <Image
-                            className="cursor-pointer w-auto h-[82px] sm:h-[122px]"
+                            className="cursor-pointer w-auto h-auto"
                             key={data?.id}
                             src={data?.image}
                             alt="generator"

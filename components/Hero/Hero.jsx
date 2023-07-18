@@ -54,9 +54,9 @@ const Hero = () => {
                     clickable: true,
                 }}
                 modules={[EffectFade, Navigation, Pagination, Autoplay]}
-                className="mySwiper1 w-full h-[700px] md:h-[650px] bg-hero-gradient z-40"
+                className="mySwiper w-full h-[700px] md:h-[650px] bg-hero-gradient z-40"
             >
-                <SwiperSlide className="swiperSlide1">
+                <SwiperSlide>
                     <Image
                         className="object-cover"
                         src={Hero_bg}
@@ -64,7 +64,7 @@ const Hero = () => {
                         alt="bg"
                     />
                 </SwiperSlide>
-                <SwiperSlide className="swiperSlide1">
+                <SwiperSlide>
                     <Image
                         className="object-cover"
                         src={Hero_bg1}
@@ -72,7 +72,7 @@ const Hero = () => {
                         alt="bg"
                     />
                 </SwiperSlide>
-                <SwiperSlide className="swiperSlide1">
+                <SwiperSlide>
                     <Image
                         className="object-cover"
                         src={Hero_bg2}

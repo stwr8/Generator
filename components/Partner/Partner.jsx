@@ -68,7 +68,7 @@ const Partner = () => {
                         <div className="flex items-center space-x-[6px] mt-5">
                             <Link
                                 className="font-medium text-[20px] text-[#4762FF]"
-                                href={"/"}
+                                href={"/catalog"}
                             >
                                 Посмотреть каталог
                             </Link>

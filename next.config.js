@@ -4,6 +4,9 @@ const nextConfig = {
     experimental: {
         appDir: true,
     },
+    images: {
+        domains: ["api.generatoruz.com"],
+      },
 };
 
 module.exports = nextConfig;

@@ -3,6 +3,8 @@ import Image from "next/image";
 
 // Images
 import Generator from "@/public/Images/big_generator.png";
+import Generator2 from "@/public/Images/big_generator2.png";
+import Plus from "@/public/Images/plus.png";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,25 +19,6 @@ import "./design.css";
 
 // import required modules
 import { Navigation, Autoplay } from "swiper/modules";
-
-const datas = [
-    {
-        id: 1,
-        image: Generator,
-    },
-    {
-        id: 2,
-        image: Generator,
-    },
-    {
-        id: 3,
-        image: Generator,
-    },
-    {
-        id: 4,
-        image: Generator,
-    },
-];
 
 const Design = () => {
     return (
@@ -56,28 +39,68 @@ const Design = () => {
                     spaceBetween={100}
                     slidesPerView={1}
                     autoplay={{
-                        delay: 15000,
+                        delay: 55000,
                         disableOnInteraction: false,
                     }}
                     navigation={true}
                     pagination={false}
                     modules={[Navigation, Autoplay]}
-                    className="mySwiper w-full z-10 !pb-3 !px-2 sm:!px-20"
+                    className="mySwiper h-[170px] sm:h-[490px] z-10 !pb-3 !px-2 sm:!px-20"
                 >
-                    {datas.map((data) => (
-                        <SwiperSlide
-                            key={data?.id}
-                            className="cursor-pointer !flex !justify-center"
-                        >
-                            <div className="w-full bg-white rounded-md">
-                                <Image
-                                    className="!w-full h-[170px] sm:h-[490px] rounded-md"
-                                    src={data?.image}
-                                    alt="generator"
-                                />
-                            </div>
-                        </SwiperSlide>
-                    ))}
+                    <SwiperSlide className="!flex !justify-center cursor-pointer">
+                        <Image
+                            className="w-auto h-full rounded-md border relative"
+                            src={Generator}
+                            alt="generator"
+                        />
+
+                        <Image
+                            className="absolute left-10"
+                            src={Plus}
+                            width={40}
+                            height={40}
+                            alt="plus"
+                        />
+
+                        <Image
+                            className="absolute"
+                            src={Plus}
+                            width={40}
+                            height={40}
+                            alt="plus"
+                        />
+
+                        <Image
+                            className="absolute"
+                            src={Plus}
+                            width={40}
+                            height={40}
+                            alt="plus"
+                        />
+
+                        <Image
+                            className="absolute"
+                            src={Plus}
+                            width={40}
+                            height={40}
+                            alt="plus"
+                        />
+
+                        <Image
+                            className="absolute"
+                            src={Plus}
+                            width={40}
+                            height={40}
+                            alt="plus"
+                        />
+                    </SwiperSlide>
+                    <SwiperSlide className="!flex !justify-center cursor-pointer">
+                        <Image
+                            className="w-auto h-full rounded-md"
+                            src={Generator2}
+                            alt="generator"
+                        />
+                    </SwiperSlide>
                 </Swiper>
             </div>
         </div>

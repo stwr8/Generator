@@ -7,6 +7,9 @@ import Generator from "@/public/Images/generator.png";
 import Up from "@/public/Images/chevron-right.svg";
 import axios from "axios";
 
+// Css
+import "./product.css";
+
 const datas = [
     {
         id: 1,
@@ -94,16 +97,40 @@ const Product = () => {
     const [drop, setDrop] = useState(false);
     const [drop1, setDrop1] = useState(false);
     const [categories, setCategories] = useState([]);
+    const [products, setProducts] = useState([]);
+    const [categoriesId, setCategoriesId] = useState("");
+    const power = [
+        { id: 1, kb: "12.4" },
+        { id: 2, kb: "10" },
+        { id: 3, kb: "7" },
+    ];
 
     useEffect(() => {
+        // ---> Category get
         axios
-            .get("http://128.199.132.13:6161/category/all", {
+            .get("https://api.generatoruz.com/category/all", {
                 headers: { lang: "en" },
             })
             .then((res) => setCategories(res?.data?.data?.result))
             .catch((err) => console.log(err));
+
+        // ---> Product
+        axios
+            .get(
+                `${
+                    categoriesId.length > 0
+                        ? `https://api.generatoruz.com/product/all?categoryId=${categoriesId}&Pover=12.4`
+                        : "https://api.generatoruz.com/product/all"
+                }`,
+                {
+                    headers: { lang: "en" },
+                }
+            )
+            .then((res) => setProducts(res?.data?.data?.result))
+            .catch((err) => console.log(err));
     }, []);
 
+    console.log(products);
     return (
         <section>
             <div className="container">
@@ -134,72 +161,29 @@ const Product = () => {
                                 autoComplete="off"
                                 method="GET"
                             >
-                                <div className="flex items-center space-x-[10px] py-[5px] bg-white">
-                                    <input
-                                        className="w-[22px] h-[22px] rounded-[3px] cursor-pointer"
-                                        type="checkbox"
-                                        name="PERKINS"
-                                        id="1"
-                                    />
-                                    <p className="font-normal text-[#333] text-[16px] opacity-70">
-                                        PERKINS
-                                    </p>
-                                </div>
-                                <div className="flex items-center space-x-[10px] py-[5px]">
-                                    <input
-                                        className="w-[22px] h-[22px] rounded-[3px] cursor-pointer"
-                                        type="checkbox"
-                                        name="VOLVO"
-                                        id="2"
-                                    />
-                                    <p className="font-normal text-[#333] text-[16px] opacity-70">
-                                        VOLVO
-                                    </p>
-                                </div>
-                                <div className="flex items-center space-x-[10px] py-[5px]">
-                                    <input
-                                        className="w-[22px] h-[22px] rounded-[3px] cursor-pointer"
-                                        type="checkbox"
-                                        name="WEICHAI"
-                                        id="3"
-                                    />
-                                    <p className="font-normal text-[#333] text-[16px] opacity-70">
-                                        WEICHAI
-                                    </p>
-                                </div>
-                                <div className="flex items-center space-x-[10px] py-[5px]">
-                                    <input
-                                        className="w-[22px] h-[22px] rounded-[3px] cursor-pointer"
-                                        type="checkbox"
-                                        name="BAUDOUIN"
-                                        id="4"
-                                    />
-                                    <p className="font-normal text-[#333] text-[16px] opacity-70">
-                                        BAUDOUIN
-                                    </p>
-                                </div>
-                                <div className="flex items-center space-x-[10px] py-[5px]">
-                                    <input
-                                        className="w-[22px] h-[22px] rounded-[3px] cursor-pointer"
-                                        type="checkbox"
-                                        name="SHANGAI"
-                                        id="5"
-                                    />
-                                    <p className="font-normal text-[#333] text-[16px] opacity-70">
-                                        SHANGAI
-                                    </p>
-                                </div>
-                                <div className="flex items-center space-x-[10px] py-[5px]">
-                                    <input
-                                        className="w-[22px] h-[22px] rounded-[3px] cursor-pointer"
-                                        type="checkbox"
-                                        name="ELLA"
-                                        id="6"
-                                    />
-                                    <p className="font-normal text-[#333] text-[16px] opacity-70">
-                                        ELLA
-                                    </p>
-                                </div>
+                                {categories.length > 0 &&
+                                    categories?.map((data) => (
+                                        <div
+                                            key={data?.id}
+                                            className="flex items-center space-x-[10px] py-[5px] bg-white"
+                                        >
+                                            <input
+                                                className="categories_checkbox w-[22px] h-[22px] rounded-[3px] cursor-pointer accent-pink-500"
+                                                type="checkbox"
+                                                name={data?.name}
+                                                id={data?.name}
+                                                onClick={() =>
+                                                    setCategoriesId(data?._id)
+                                                }
+                                            />
+                                            <label
+                                                htmlFor={data?.name}
+                                                className="font-normal text-[#333] text-[16px] opacity-70 cursor-pointer"
+                                            >
+                                                {data?.name}
+                                            </label>
+                                        </div>
+                                    ))}
                             </form>
                         ) : null}
                         <button
@@ -224,84 +208,64 @@ const Product = () => {
                                 autoComplete="off"
                                 method="GET"
                             >
-                                <div className="flex items-center space-x-[10px] py-[5px] bg-white">
-                                    <input
-                                        className="w-[22px] h-[22px] rounded-[3px] cursor-pointer"
-                                        type="checkbox"
-                                        name="(9кВа / 7кW)"
-                                        id="1"
-                                    />
-                                    <p className="font-normal text-[#333] text-[16px] opacity-70">
-                                        (9кВа / 7кW)
-                                    </p>
-                                </div>
-                                <div className="flex items-center space-x-[10px] py-[5px]">
-                                    <input
-                                        className="w-[22px] h-[22px] rounded-[3px] cursor-pointer"
-                                        type="checkbox"
-                                        name="(9кВа / 7кW)"
-                                        id="2"
-                                    />
-                                    <p className="font-normal text-[#333] text-[16px] opacity-70">
-                                        (9кВа / 7кW)
-                                    </p>
-                                </div>
-                                <div className="flex items-center space-x-[10px] py-[5px]">
-                                    <input
-                                        className="w-[22px] h-[22px] rounded-[3px] cursor-pointer"
-                                        type="checkbox"
-                                        name="(9кВа / 7кW)"
-                                        id="3"
-                                    />
-                                    <p className="font-normal text-[#333] text-[16px] opacity-70">
-                                        (9кВа / 7кW)
-                                    </p>
-                                </div>
-                                <div className="flex items-center space-x-[10px] py-[5px]">
-                                    <input
-                                        className="w-[22px] h-[22px] rounded-[3px] cursor-pointer"
-                                        type="checkbox"
-                                        name="(9кВа / 7кW)"
-                                        id="4"
-                                    />
-                                    <p className="font-normal text-[#333] text-[16px] opacity-70">
-                                        (9кВа / 7кW)
-                                    </p>
-                                </div>
+                                {power?.map((data) => (
+                                    <div
+                                        key={data?.id}
+                                        className="flex items-center space-x-[10px] py-[5px] bg-white"
+                                    >
+                                        <input
+                                            className="categories_checkbox w-[22px] h-[22px] rounded-[3px] cursor-pointer accent-pink-500"
+                                            type="checkbox"
+                                            name={data?.kb}
+                                            id={data?.kb}
+                                            // onClick={() =>
+                                            //     setCategoriesId(data?._id)
+                                            // }
+                                        />
+                                        <label
+                                            htmlFor={data?.kb}
+                                            className="font-normal text-[#333] text-[16px] opacity-70 cursor-pointer"
+                                        >
+                                            {data?.kb} кВа
+                                        </label>
+                                    </div>
+                                ))}
                             </form>
                         ) : null}
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mx-auto sm:mx-0">
-                        {datas?.map((data) => (
+                        {products?.map((product) => (
                             <div
-                                key={data?.id}
+                                key={product?._id}
                                 className="max-w-[250px] bg-white rounded-md shadow-card_shadow"
                             >
                                 <Image
                                     className="w-full h-[165px] rounded-md"
-                                    src={data?.image}
+                                    src={`https://api.generatoruz.com/public/uploads/${product?.image}`}
                                     alt="generator"
+                                    width={230}
+                                    height={161}
                                 />
                                 <div className="px-[18px] pb-5">
                                     <h2 className="font-medium text-[20px] text-black">
-                                        {data?.title}
+                                        {product?.title}
                                     </h2>
                                     <p className="font-bold text-[#333] opacity-80 mt-[3px]">
                                         Тип топлива{" "}
                                         <span className="inline-block font-medium text-[#333] opacity-60">
-                                            - {data?.fuel_type}
+                                            - {product?.fuel_type}
                                         </span>
                                     </p>
                                     <p className="font-bold text-[#333] opacity-80">
                                         Модель{" "}
                                         <span className="inline-block font-medium text-[#333] opacity-60">
-                                            - {data?.model}
+                                            - {product?.model}
                                         </span>
                                     </p>
                                     <p className="font-bold text-[#333] opacity-80">
                                         Мощность{" "}
                                         <span className="inline-block font-medium text-[#333] opacity-60">
-                                            - {data?.power}
+                                            - {product?.power}
                                         </span>
                                     </p>
                                 </div>
