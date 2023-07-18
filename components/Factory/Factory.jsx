@@ -11,7 +11,7 @@ const Factory = () => {
                 <Image
                     data-aos="fade-up-right"
                     data-aos-duration="600"
-                    className="max-w-[530px] w-full !h-[275px] sm:h-[410px] rounded-b-[50px] object-cover"
+                    className="max-w-[530px] w-full !h-[275px] sm:!h-[410px] rounded-b-[50px] object-cover"
                     src={FactotyImage}
                     width={530}
                     height={410}
