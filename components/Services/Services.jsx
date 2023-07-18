@@ -106,7 +106,7 @@ const Services = () => {
                             </p>
                         ))}
                         <Image
-                            className="block sm:hidden w-full h-[225px] rounded-[26px] mt-5"
+                            className="block sm:hidden w-full h-[225px] rounded-b-[26px] mt-5"
                             src={data?.image}
                             alt="service-image"
                         />
