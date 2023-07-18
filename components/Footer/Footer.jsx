@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Images
-import Logo from "../../public/Images/logoWhite.png";
+import Logo from "../../public/Images/LogoWhite.png";
 import Arrow from "../../public/Images/arrow-up.svg";
 
 const Footer = () => {
