@@ -9,7 +9,8 @@ import Call from "../../public/Images/call.svg";
 import Planet_Black from "../../public/Images/planet_black.svg";
 import Planet from "../../public/Images/planet.svg";
 import Vector from "../../public/Images/vector.svg";
-import Logo from "../../public/Images/logoP.png";
+import LogoP from "../../public/Images/logoP.png";
+import Logo from "../../public/Images/LogoBlack.png";
 import CallWhite from "../../public/Images/call_white.svg";
 import Search from "../../public/Images/search.svg";
 
@@ -253,7 +254,12 @@ const Header = () => {
                 >
                     <Link className="flex items-center" href="/">
                         <Image
-                            className="w-[40px] sm:w-[48px] h-[35px] sm:h-[41px]"
+                            className="sm:hidden w-[40px] sm:w-[48px] h-[35px] sm:h-[41px]"
+                            src={LogoP}
+                            alt="site-logo"
+                        />
+                        <Image
+                            className="hidden sm:block w-[140px] sm:w-[170px] h-[35px] sm:h-[50px]"
                             src={Logo}
                             alt="site-logo"
                         />
