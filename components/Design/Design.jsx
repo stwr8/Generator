@@ -4,7 +4,7 @@ import Image from "next/image";
 // Images
 import Generator from "@/public/Images/big_generator.png";
 import Generator2 from "@/public/Images/big_generator2.png";
-import Plus from "@/public/Images/plus.png";
+// import Plus from "@/public/Images/plus.png";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -49,49 +49,9 @@ const Design = () => {
                 >
                     <SwiperSlide className="!flex !justify-center cursor-pointer">
                         <Image
-                            className="w-auto h-full rounded-md border relative"
+                            className="w-auto h-full rounded-md"
                             src={Generator}
                             alt="generator"
-                        />
-
-                        <Image
-                            className="absolute left-10"
-                            src={Plus}
-                            width={40}
-                            height={40}
-                            alt="plus"
-                        />
-
-                        <Image
-                            className="absolute"
-                            src={Plus}
-                            width={40}
-                            height={40}
-                            alt="plus"
-                        />
-
-                        <Image
-                            className="absolute"
-                            src={Plus}
-                            width={40}
-                            height={40}
-                            alt="plus"
-                        />
-
-                        <Image
-                            className="absolute"
-                            src={Plus}
-                            width={40}
-                            height={40}
-                            alt="plus"
-                        />
-
-                        <Image
-                            className="absolute"
-                            src={Plus}
-                            width={40}
-                            height={40}
-                            alt="plus"
                         />
                     </SwiperSlide>
                     <SwiperSlide className="!flex !justify-center cursor-pointer">
