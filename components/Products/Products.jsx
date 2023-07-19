@@ -98,7 +98,11 @@ const Product = () => {
                         checked={activeCategory === data?._id}
                         name={data?.name}
                         id={data?.name}
-                        onClick={() => setActiveCategory(data?._id)}
+                        onClick={() =>
+                          setActiveCategory(
+                            activeCategory === data?._id ? null : data?._id
+                          )
+                        }
                       />
                       <label
                         htmlFor={data?.name}
@@ -137,7 +141,11 @@ const Product = () => {
                       name={data?.kb}
                       id={data?.kb}
                       checked={productPower === data?.kb}
-                      onClick={() => setproductPower(data?.kb)}
+                      onClick={() =>
+                        setproductPower(
+                          productPower === data?.kb ? null : data?.kb
+                        )
+                      }
                     />
                     <label
                       htmlFor={data?.kb}
