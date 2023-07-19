@@ -50,19 +50,23 @@ const Header = () => {
     }, []);
 
     useEffect(() => {
-        let lastScrollY = window.scrollY;
-        console.log(lastScrollY);
-        const CheckScroll = () => {
+        function handleResize() {
+            const lastScrollY = window.scrollY;
             if (lastScrollY < window.scrollY) {
-                setScrollDown("bg-white");
+                setScrollDown("bg-red-500");
             } else {
-                setScrollDown("bg-white");
+                setScrollDown("");
             }
+            console.log(lastScrollY);
+        }
+
+        handleResize();
+        window.addEventListener("scroll", handleResize);
+
+        return () => {
+            window.removeEventListener("scroll", handleResize);
         };
-        window.addEventListener("scroll", () => {
-            CheckScroll;
-        });
-    }, [scrollDown]);
+    }, []);
 
     // ---> Change Language
     const ChangeUzb = () => {
@@ -133,7 +137,9 @@ const Header = () => {
         <>
             <header className={`container relative bg-white`}>
                 {/* --- Header top --- */}
-                <div className="hidden md:flex items-center justify-end py-[11px] border-b-[1px]">
+                <div
+                    className={`!${scrollDown} hidden md:flex items-center justify-end py-[11px] border-b-[1px]`}
+                >
                     <ul className="flex items-center space-x-5">
                         <li>
                             <p className="font-normal text-base text-[#333333] opacity-75">
@@ -250,7 +256,7 @@ const Header = () => {
                 </div>
                 {/* --- Header bottom --- */}
                 <div
-                    className={`!${scrollDown} fixed top-0 left-0 sm:static bg-white z-50 w-full flex items-center justify-between px-4 py-[18px]`}
+                    className={`fixed top-0 left-0 sm:!static bg-white z-50 w-full flex items-center justify-between px-4 py-[18px]`}
                 >
                     <Link className="flex items-center" href="/">
                         <Image

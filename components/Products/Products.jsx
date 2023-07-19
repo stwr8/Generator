@@ -1,11 +1,12 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 // Images
 import Generator from "@/public/Images/generator.png";
 import Up from "@/public/Images/chevron-right.svg";
-import axios from "axios";
+import Animation from "@/public/Images/animation.svg";
 
 // Css
 import "./product.css";
@@ -99,9 +100,10 @@ const Product = () => {
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
     const [categoriesId, setCategoriesId] = useState("");
+    const [productPower, setproductPower] = useState("");
     const power = [
         { id: 1, kb: "12.4" },
-        { id: 2, kb: "10" },
+        { id: 2, kb: "5" },
         { id: 3, kb: "7" },
     ];
 
@@ -118,8 +120,8 @@ const Product = () => {
         axios
             .get(
                 `${
-                    categoriesId.length > 0
-                        ? `https://api.generatoruz.com/product/all?categoryId=${categoriesId}&Pover=12.4`
+                    categoriesId.length || productPower.length
+                        ? `https://api.generatoruz.com/product/all?categoryId=${categoriesId}&Pover=${productPower}`
                         : "https://api.generatoruz.com/product/all"
                 }`,
                 {
@@ -128,9 +130,8 @@ const Product = () => {
             )
             .then((res) => setProducts(res?.data?.data?.result))
             .catch((err) => console.log(err));
-    }, []);
+    }, [categoriesId, productPower]);
 
-    console.log(products);
     return (
         <section>
             <div className="container">
@@ -164,7 +165,7 @@ const Product = () => {
                                 {categories.length > 0 &&
                                     categories?.map((data) => (
                                         <div
-                                            key={data?.id}
+                                            key={data?._id}
                                             className="flex items-center space-x-[10px] py-[5px] bg-white"
                                         >
                                             <input
@@ -218,9 +219,9 @@ const Product = () => {
                                             type="checkbox"
                                             name={data?.kb}
                                             id={data?.kb}
-                                            // onClick={() =>
-                                            //     setCategoriesId(data?._id)
-                                            // }
+                                            onClick={() =>
+                                                setproductPower(data?.kb)
+                                            }
                                         />
                                         <label
                                             htmlFor={data?.kb}

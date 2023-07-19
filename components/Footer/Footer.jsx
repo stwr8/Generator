@@ -13,7 +13,7 @@ const Footer = () => {
                     <div className="flex items-center justify-between">
                         <Link className="flex items-center" href="/">
                             <Image
-                                className="w-[140px] sm:w-[170px] h-[35px] sm:h-[50px]"
+                                className="w-[140px] sm:w-[250px] h-[35px] sm:h-[70px]"
                                 src={Logo}
                                 alt="site-logo"
                             />
