@@ -24,23 +24,6 @@ import { EffectFade, Navigation, Pagination, Autoplay } from "swiper/modules";
 import "./hero.css";
 
 const Hero = () => {
-    const [windowSize, setWindowSize] = useState(0);
-    console.log(windowSize);
-
-    // ---> Window width
-    useEffect(() => {
-        function handleResize() {
-            setWindowSize(window.innerWidth);
-        }
-
-        handleResize();
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
-
     return (
         <>
             <Swiper

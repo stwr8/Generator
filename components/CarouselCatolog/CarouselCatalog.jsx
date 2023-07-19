@@ -1,13 +1,11 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-// Images
 import Generator from "@/public/Images/generator.png";
+import Mark_x from "@/public/Images/x.svg";
 
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -20,6 +18,7 @@ import "./catolog.css";
 
 // import required modules
 import { Navigation, Autoplay } from "swiper/modules";
+import Modal from "../Modal/Modal";
 
 const datas = [
     {
@@ -105,6 +104,21 @@ const datas = [
 ];
 
 const CarouselCatalog = () => {
+    const [products, setProducts] = useState([]);
+    const [showModal, setShowModal] = useState(false);
+
+    const GetProducts = () => {
+        axios
+            .get(`https://api.generatoruz.com/product/all`, {
+                headers: { lang: "uz" },
+            })
+            .then((res) => setProducts(res?.data?.data?.result))
+            .catch(console.log);
+    };
+    useEffect(() => {
+        GetProducts();
+    }, []);
+
     return (
         <div className="bg-white mt-5 sm:mt-[68px]">
             <div className="max-w-[1350px] w-full mx-auto px-[16px] sm:!pb-[100px]">
@@ -131,49 +145,83 @@ const CarouselCatalog = () => {
                     modules={[Navigation, Autoplay]}
                     className="mySwiper w-full z-10 !pb-3 !px-[50px]"
                 >
-                    {datas.map((data) => (
+                    {products?.map((product) => (
                         <SwiperSlide
-                            key={data?.id}
+                            key={product?._id}
                             className="cursor-pointer !flex !justify-center"
                         >
                             <div className="max-w-[250px] bg-white rounded-md shadow-card_shadow">
                                 <Image
                                     className="w-full h-[165px] rounded-md"
-                                    src={data?.image}
+                                    src={`https://api.generatoruz.com/public/uploads/${product?.image}`}
                                     alt="generator"
+                                    width={236}
+                                    height={165}
                                 />
                                 <div className="px-[18px] pb-5">
                                     <h2 className="font-medium text-[20px] text-black">
-                                        {data?.title}
+                                        {product?.title}
                                     </h2>
                                     <p className="font-bold text-[#333] opacity-80 mt-[3px]">
                                         Тип топлива{" "}
                                         <span className="inline-block font-medium text-[#333] opacity-60">
-                                            - {data?.fuel_type}
+                                            - {product?.fuel_type}
                                         </span>
                                     </p>
                                     <p className="font-bold text-[#333] opacity-80">
                                         Модель{" "}
                                         <span className="inline-block font-medium text-[#333] opacity-60">
-                                            - {data?.model}
+                                            - {product?.model}
                                         </span>
                                     </p>
                                     <p className="font-bold text-[#333] opacity-80">
                                         Мощность{" "}
                                         <span className="inline-block font-medium text-[#333] opacity-60">
-                                            - {data?.power}
+                                            - {product?.power}
                                         </span>
                                     </p>
-                                    <Link
-                                        href={"/"}
-                                        className="block mx-auto font-medium text-[18px] text-white text-center py-2 bg-[#4762FF] rounded-lg mt-[14px]"
+                                    <button
+                                        type="button"
+                                        onClick={() => setShowModal(true)}
+                                        className="w-full mx-auto font-medium text-[18px] text-white text-center py-2 bg-[#4762FF] rounded-lg mt-[14px]"
                                     >
                                         Подробно
-                                    </Link>
+                                    </button>
                                 </div>
                             </div>
                         </SwiperSlide>
                     ))}
+                    <Modal
+                        change={false}
+                        isVisible={showModal}
+                        onClose={() => {
+                            setShowModal(false);
+                        }}
+                    >
+                        <div className="max-w-[590px] w-full py-[30px] px-[60px] relative">
+                            <button
+                                type="button"
+                                onClick={() => setShowContact(false)}
+                                className="absolute top-[20px] right-[25px] w-[30px] h-[30px]"
+                            >
+                                <Image
+                                    src={Mark_x}
+                                    width={30}
+                                    height={30}
+                                    alt="close"
+                                />
+                            </button>
+                            <Image
+                                className="!max-w-[300px] !w-full h-[290px]"
+                                // src={`https://api.generatoruz.com/public/uploads/${product?.image}`}
+                                width={300}
+                                height={290}
+                            />
+                            <div>
+                                <h2>Название + кВа</h2>
+                            </div>
+                        </div>
+                    </Modal>
                 </Swiper>
             </div>
         </div>

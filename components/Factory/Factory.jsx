@@ -7,7 +7,7 @@ import FactotyImage from "@/public/Images/news2.png";
 const Factory = () => {
     return (
         <section className="bg-white">
-            <div className="container flex flex-col sm:flex-row items-center justify-between !pt-5 sm:!pt-[68px]">
+            <div className="container flex flex-col sm:flex-row items-center justify-between space-x-0 sm:space-x-10 !pt-5 sm:!pt-[68px]">
                 <Image
                     data-aos="fade-up-right"
                     data-aos-duration="600"

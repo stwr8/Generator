@@ -50,22 +50,14 @@ const Header = () => {
     }, []);
 
     useEffect(() => {
-        function handleResize() {
+        window.addEventListener("scroll", () => {
             const lastScrollY = window.scrollY;
             if (lastScrollY < window.scrollY) {
-                setScrollDown("bg-red-500");
+                setScrollDown("border-[10px]");
             } else {
                 setScrollDown("");
             }
-            console.log(lastScrollY);
-        }
-
-        handleResize();
-        window.addEventListener("scroll", handleResize);
-
-        return () => {
-            window.removeEventListener("scroll", handleResize);
-        };
+        });
     }, []);
 
     // ---> Change Language
