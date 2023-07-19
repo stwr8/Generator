@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import axios from "axios";
 
 import Up from "@/public/Images/chevron-right.svg";
-import NotFound from "@/public/Images/notfound.jpg";
 
 import "./product.css";
 
@@ -47,7 +46,7 @@ const Product = () => {
 
     const getAllCategories = () => {
         axios
-            .get(`https://api.generatoruz.com/product/all`, {
+            .get("https://api.generatoruz.com/category/all", {
                 headers: { lang: "en" },
             })
             .then((res) => setCategories(res?.data?.data?.result))
@@ -107,7 +106,12 @@ const Product = () => {
                                                 name={data?.name}
                                                 id={data?.name}
                                                 onClick={() =>
-                                                    setActiveCategory(data?._id)
+                                                    setActiveCategory(
+                                                        activeCategory ===
+                                                            data?._id
+                                                            ? null
+                                                            : data?._id
+                                                    )
                                                 }
                                             />
                                             <label
@@ -154,7 +158,11 @@ const Product = () => {
                                             id={data?.kb}
                                             checked={productPower === data?.kb}
                                             onClick={() =>
-                                                setproductPower(data?.kb)
+                                                setproductPower(
+                                                    productPower === data?.kb
+                                                        ? null
+                                                        : data?.kb
+                                                )
                                             }
                                         />
                                         <label
@@ -178,7 +186,7 @@ const Product = () => {
                                         className="max-w-[250px] bg-white rounded-md shadow-card_shadow"
                                     >
                                         <Image
-                                            className="!max-w-[230px] !w-full h-[165px] rounded-md"
+                                            className="w-full h-[165px] rounded-md"
                                             src={`https://api.generatoruz.com/public/uploads/${product?.image}`}
                                             alt="generator"
                                             width={230}
@@ -210,16 +218,8 @@ const Product = () => {
                                     </motion.div>
                                 ))
                             ) : (
-                                <motion.div
-                                    {...motionConfig}
-                                    key={0}
-                                    className="mx-auto"
-                                >
-                                    <Image
-                                        className=""
-                                        src={NotFound}
-                                        alt="Not found"
-                                    />
+                                <motion.div {...motionConfig} key={0}>
+                                    No items found 🙁
                                 </motion.div>
                             )}
                         </AnimatePresence>
