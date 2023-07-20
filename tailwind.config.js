@@ -40,6 +40,7 @@ module.exports = {
             colors: {
                 "link-color": "rgba(255, 255, 255, 0.80)",
                 "text-color": "rgba(51, 51, 51, 0.80)",
+                "text-color2": "rgba(51, 51, 51, 0.60)",
             },
         },
     },

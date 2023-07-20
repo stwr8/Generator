@@ -2,9 +2,12 @@
 import Image from "next/image";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+
+import Modal from "../Modal/Modal";
 
 import Generator from "@/public/Images/generator.png";
-import Mark_x from "@/public/Images/x.svg";
+import Mark_x from "@/public/Images/x_black.svg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -18,7 +21,6 @@ import "./catolog.css";
 
 // import required modules
 import { Navigation, Autoplay } from "swiper/modules";
-import Modal from "../Modal/Modal";
 
 const datas = [
     {
@@ -191,6 +193,7 @@ const CarouselCatalog = () => {
                             </div>
                         </SwiperSlide>
                     ))}
+                    
                     <Modal
                         change={false}
                         isVisible={showModal}
@@ -198,7 +201,7 @@ const CarouselCatalog = () => {
                             setShowModal(false);
                         }}
                     >
-                        <div className="max-w-[590px] w-full py-[30px] px-[60px] relative">
+                        <div className="flex items-start justify-between bg-white max-w-[720px] w-full py-[30px] px-[30px] rounded-[26px] border relative">
                             <button
                                 type="button"
                                 onClick={() => setShowContact(false)}
@@ -217,8 +220,34 @@ const CarouselCatalog = () => {
                                 width={300}
                                 height={290}
                             />
-                            <div>
-                                <h2>Название + кВа</h2>
+                            <div className="mx-10">
+                                <h2 className="font-bold text-[20px] leading-[30px] text-text-color">
+                                    Название + кВа
+                                </h2>
+                                <ul className="mt-[30px]">
+                                    <li className="font-bold text-[16px] text-text-color2 leading=[20px]">
+                                        Модель - кВа
+                                    </li>
+                                    <li className="font-bold text-[16px] text-text-color2 leading=[20px]">
+                                        Макс.общая выходная мощность (кВт/л.с.)
+                                    </li>
+                                    <li className="font-bold text-[16px] text-text-color2 leading=[20px]">
+                                        Объем цилиндра (л){" "}
+                                    </li>
+                                    <li className="font-bold text-[16px] text-text-color2 leading=[20px]">
+                                        Построение цилиндров Диаметр цилиндра x
+                                        Ход поршня (мм*мм)
+                                    </li>
+                                    <li className="font-bold text-[16px] text-text-color2 leading=[20px]">
+                                        Тип регулятора
+                                    </li>
+                                </ul>
+                                <Link
+                                    className="bg-[#4762FF] flex items-center justify-center max-w-[270px] w-full h-[41px] mt-[34px] font-semibold text-[18px] text-white rounded-[8px] leading-normal"
+                                    href={`/`}
+                                >
+                                    Подробно
+                                </Link>
                             </div>
                         </div>
                     </Modal>

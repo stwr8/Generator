@@ -28,7 +28,7 @@ function Modal({ isVisible, onClose, children, change }) {
                 data-aos-duration="300"
                 className={`${
                     isVisible && change
-                        ? "left-0 w-full h-full absolute bg-white px-4"
+                        ? "left-0 w-full h-full !bg-white px-4"
                         : "-left-[100%]"
                 } ${change ? null : "bg-[#4762FF] rounded-[26px]"} `}
             >
